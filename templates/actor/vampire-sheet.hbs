@@ -1,0 +1,461 @@
+<form class="vtm-custom sheet actor vampire" autocomplete="off">
+
+  {{!-- ==================== HEADER ==================== --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+    <div class="header-fields">
+      <h1 class="charname">
+        <input name="name" type="text" value="{{actor.name}}" placeholder="Character Name" />
+      </h1>
+    </div>
+    <div class="header-tags">
+      {{#if system.clan}}
+        <span class="header-tag tag-clan">{{system.clan}}</span>
+      {{/if}}
+      {{#if system.generation}}
+        <span class="header-tag tag-gen">{{system.generation}}</span>
+      {{/if}}
+    </div>
+  </header>
+
+  {{!-- ==================== FRENZY BAR ==================== --}}
+  {{#if system.frenzy}}
+    <div class="frenzy-bar {{system.frenzy}}">
+      <span class="fb-icon">{{frenzyInfo.icon}}</span>
+      <div class="fb-text">
+        <div class="fb-title">{{frenzyInfo.title}}</div>
+        <div class="fb-sub">{{frenzyInfo.subtitle}}</div>
+      </div>
+      <button type="button" class="fb-end end-frenzy">End frenzy</button>
+    </div>
+  {{/if}}
+
+  {{!-- ==================== RESOURCE BAR ==================== --}}
+  <div class="resource-bar">
+    <div class="resource-trackers">
+      {{!-- Health (V5 damage boxes) --}}
+      <div class="tracker-group">
+        <label>{{localize "VTM.Health"}}</label>
+        <div class="tracker-row">
+          {{#each healthBoxes}}
+            <span class="dmg-box {{this.class}}" data-tracker="health" data-index="{{@index}}" title="Click to cycle: empty > superficial > aggravated"></span>
+          {{/each}}
+        </div>
+        <div class="tracker-value">{{healthDamaged}} / {{healthTotal}} damaged</div>
+      </div>
+
+      {{!-- Damage legend --}}
+      <div class="dmg-legend">
+        <span><span class="dl-box" style="background:#6b3040;border-color:#8a4a5a"></span>Superficial</span>
+        <span><span class="dl-box" style="background:#cc2233;border-color:#ee3344"></span>Aggravated</span>
+      </div>
+
+      {{!-- Willpower --}}
+      <div class="tracker-group">
+        <label>{{localize "VTM.Willpower"}}</label>
+        <div class="tracker-row">
+          {{#each willpowerBoxes}}
+            <span class="box {{#if this}}filled{{/if}}" data-tracker="willpower" data-index="{{@index}}"></span>
+          {{/each}}
+        </div>
+        <div class="tracker-value">{{system.willpower.current}} / {{system.willpower.max}}</div>
+      </div>
+
+      {{!-- Hunger --}}
+      <div class="tracker-group">
+        <label>{{localize "VTM.Hunger"}}</label>
+        <div class="tracker-row">
+          {{#each hungerDots}}
+            <span class="dot {{#if this}}hunger-filled{{/if}}" data-tracker="hunger" data-index="{{@index}}"></span>
+          {{/each}}
+        </div>
+        <div class="tracker-value">{{system.hunger}} / 5</div>
+      </div>
+
+      {{!-- Humanity --}}
+      <div class="tracker-group">
+        <label>{{localize "VTM.Humanity"}}</label>
+        <div class="tracker-row">
+          {{#each humanityDots}}
+            <span class="dot {{#if this}}filled{{/if}}" data-tracker="humanity" data-index="{{@index}}"></span>
+          {{/each}}
+        </div>
+      </div>
+
+      {{!-- Blood Potency --}}
+      <div class="tracker-group">
+        <label>{{localize "VTM.BloodPotency"}}</label>
+        <div class="tracker-row">
+          {{#each bloodPotencyDots}}
+            <span class="dot {{#if this}}filled{{/if}}" data-tracker="bloodPotency" data-index="{{@index}}"></span>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    {{!-- Action buttons --}}
+    <div class="resource-actions">
+      <span class="actions-label">Actions</span>
+      <button type="button" class="action-btn primary quick-roll">&#9861; Quick roll</button>
+      <div class="action-separator"></div>
+      <button type="button" class="action-btn frenzy-btn frenzy-check">&#9760; Frenzy check</button>
+    </div>
+  </div>
+
+  {{!-- ==================== TABS ==================== --}}
+  <nav class="sheet-tabs" data-group="primary">
+    <a class="item" data-tab="attributes">{{localize "VTM.Attributes"}}</a>
+    <a class="item" data-tab="skills">{{localize "VTM.Skills"}}</a>
+    <a class="item" data-tab="disciplines">{{localize "VTM.Disciplines"}}</a>
+    <a class="item" data-tab="inventory">Inventory</a>
+    <a class="item" data-tab="xp">XP</a>
+    <a class="item" data-tab="bio">Bio</a>
+  </nav>
+
+  {{!-- ==================== TAB BODY ==================== --}}
+  <section class="sheet-body">
+
+    {{!-- ========== ATTRIBUTES TAB ========== --}}
+    <div class="tab" data-group="primary" data-tab="attributes">
+      <div class="grid-3col">
+        {{!-- Physical --}}
+        <div class="col">
+          <h3>Physical</h3>
+          {{#each physicalAttrs}}
+            <div class="attr-row" data-attr="{{this.key}}">
+              <span class="attr-label">{{this.label}}</span>
+              <div class="dot-set">
+                {{#each this.dots}}
+                  <span class="dot {{#if this}}filled{{/if}}" data-group="attributes" data-key="{{../this.key}}" data-value="{{math @index 1}}"></span>
+                {{/each}}
+              </div>
+            </div>
+          {{/each}}
+        </div>
+        {{!-- Social --}}
+        <div class="col">
+          <h3>Social</h3>
+          {{#each socialAttrs}}
+            <div class="attr-row" data-attr="{{this.key}}">
+              <span class="attr-label">{{this.label}}</span>
+              <div class="dot-set">
+                {{#each this.dots}}
+                  <span class="dot {{#if this}}filled{{/if}}" data-group="attributes" data-key="{{../this.key}}" data-value="{{math @index 1}}"></span>
+                {{/each}}
+              </div>
+            </div>
+          {{/each}}
+        </div>
+        {{!-- Mental --}}
+        <div class="col">
+          <h3>Mental</h3>
+          {{#each mentalAttrs}}
+            <div class="attr-row" data-attr="{{this.key}}">
+              <span class="attr-label">{{this.label}}</span>
+              <div class="dot-set">
+                {{#each this.dots}}
+                  <span class="dot {{#if this}}filled{{/if}}" data-group="attributes" data-key="{{../this.key}}" data-value="{{math @index 1}}"></span>
+                {{/each}}
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    {{!-- ========== SKILLS TAB ========== --}}
+    <div class="tab" data-group="primary" data-tab="skills">
+      <div class="grid-3col">
+        {{!-- Talents --}}
+        <div class="col">
+          <h3>{{localize "VTM.Talents"}}</h3>
+          {{#each talentsList}}
+            <div class="attr-row" data-skill="{{this.key}}">
+              <span class="attr-label">{{this.label}}</span>
+              <div class="dot-set">
+                {{#each this.dots}}
+                  <span class="dot {{#if this}}filled{{/if}}" data-group="talents" data-key="{{../this.key}}" data-value="{{math @index 1}}"></span>
+                {{/each}}
+              </div>
+            </div>
+          {{/each}}
+        </div>
+        {{!-- Skills --}}
+        <div class="col">
+          <h3>{{localize "VTM.Skills"}}</h3>
+          {{#each skillsList}}
+            <div class="attr-row" data-skill="{{this.key}}">
+              <span class="attr-label">{{this.label}}</span>
+              <div class="dot-set">
+                {{#each this.dots}}
+                  <span class="dot {{#if this}}filled{{/if}}" data-group="skills" data-key="{{../this.key}}" data-value="{{math @index 1}}"></span>
+                {{/each}}
+              </div>
+            </div>
+          {{/each}}
+        </div>
+        {{!-- Knowledges --}}
+        <div class="col">
+          <h3>{{localize "VTM.Knowledges"}}</h3>
+          {{#each knowledgesList}}
+            <div class="attr-row" data-skill="{{this.key}}">
+              <span class="attr-label">{{this.label}}</span>
+              <div class="dot-set">
+                {{#each this.dots}}
+                  <span class="dot {{#if this}}filled{{/if}}" data-group="knowledges" data-key="{{../this.key}}" data-value="{{math @index 1}}"></span>
+                {{/each}}
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    {{!-- ========== DISCIPLINES TAB ========== --}}
+    <div class="tab" data-group="primary" data-tab="disciplines">
+      <div class="section-header">
+        <h3>{{localize "VTM.Disciplines"}}</h3>
+        <div class="header-buttons">
+          <button type="button" class="btn btn-red add-discipline">+ Add Discipline</button>
+        </div>
+      </div>
+
+      {{#each system.disciplines}}
+        <div class="disc-item" data-disc-index="{{@index}}">
+          <div class="disc-header toggle-disc" data-index="{{@index}}">
+            <div class="disc-icon" {{#if this.color}}style="color: {{this.color}}"{{/if}}>{{this.icon}}</div>
+            <span class="disc-name">{{this.name}}</span>
+            {{#if this.path}}<span class="disc-path">{{this.path}}</span>{{/if}}
+            <div class="disc-dots" data-index="{{@index}}">
+              {{#each (dotArray this.value 5)}}
+                <span class="dot {{#if this}}filled{{/if}}" data-disc-dot="{{../@index}}" data-value="{{math @index 1}}"></span>
+              {{/each}}
+            </div>
+            <button type="button" class="disc-delete delete-discipline" data-index="{{@index}}">&#10005;</button>
+            <span class="chevron {{#if this.open}}open{{/if}}">&#9654;</span>
+          </div>
+          {{#if this.open}}
+            <div class="disc-powers">
+              {{#if this.powers.length}}
+                {{#each this.powers}}
+                  <div class="power-entry {{#if (gt this.level ../this.value)}}dimmed{{/if}}">
+                    <div class="power-row">
+                      <span class="power-level">Lvl {{this.level}}</span>
+                      <span class="power-name power-toggle" data-disc="{{../@index}}" data-power="{{@index}}">&#9658; {{this.name}}</span>
+                      {{#unless (gt this.level ../this.value)}}
+                        <span class="power-cost">{{this.cost}}</span>
+                        {{#if this.amalgam}}<span class="power-amalgam">{{this.amalgam}}</span>{{/if}}
+                        {{#unless (eq this.pool "--")}}<span class="power-pool">{{this.pool}}</span>{{/unless}}
+                        <span class="power-pin {{#if this.pin}}active{{/if}}" data-disc="{{../@index}}" data-power="{{@index}}">{{#if this.pin}}&#9733;{{else}}&#9734;{{/if}}</span>
+                      {{/unless}}
+                    </div>
+                    {{!-- Expandable detail panel --}}
+                    <div class="power-detail" data-disc="{{../@index}}" data-power="{{@index}}" style="display:none">
+                      <div class="power-desc">{{this.description}}</div>
+                      <div class="power-meta">
+                        <span>Pool: <strong>{{this.pool}}</strong></span>
+                        <span>Cost: <strong>{{this.cost}}</strong></span>
+                        {{#if this.amalgam}}<span>Amalgam: <strong>{{this.amalgam}}</strong></span>{{/if}}
+                      </div>
+                    </div>
+                  </div>
+                {{/each}}
+              {{else}}
+                <p class="empty-state">Increase dots to unlock powers.</p>
+              {{/if}}
+            </div>
+          {{/if}}
+        </div>
+      {{/each}}
+
+      {{#unless system.disciplines.length}}
+        <p class="empty-state">No disciplines added yet.</p>
+      {{/unless}}
+
+      <hr class="divider">
+
+      <div class="section-header">
+        <h3>Rituals</h3>
+        <div class="header-buttons">
+          <button type="button" class="btn add-ritual">+ Add Ritual</button>
+          <button type="button" class="btn add-custom-ritual">+ Custom</button>
+        </div>
+      </div>
+
+      {{#each system.rituals}}
+        <div class="ritual-entry">
+          <div class="ritual-item">
+            <span class="ritual-level">Lvl {{this.level}}</span>
+            <span class="ritual-name ritual-toggle" data-index="{{@index}}">&#9658; {{this.name}}{{#if this.custom}} *{{/if}}</span>
+            <span class="ritual-cost">{{this.cost}}</span>
+            <button type="button" class="item-delete delete-ritual" data-index="{{@index}}">&#10005;</button>
+          </div>
+          <div class="ritual-detail" data-index="{{@index}}" style="display:none">
+            <div class="ritual-detail-desc">{{this.description}}</div>
+            <div class="ritual-detail-meta">
+              <span>Pool: <strong>{{this.pool}}</strong></span>
+              <span>Cost: <strong>{{this.cost}}</strong></span>
+              {{#if this.time}}<span>Time: <strong>{{this.time}}</strong></span>{{/if}}
+            </div>
+            {{#if this.ingredients}}
+              <div class="ritual-detail-ingredients">Ingredients: {{this.ingredients}}</div>
+            {{/if}}
+          </div>
+        </div>
+      {{/each}}
+
+      {{#unless system.rituals.length}}
+        <p class="empty-state">No rituals learned.</p>
+      {{/unless}}
+    </div>
+
+    {{!-- ========== INVENTORY TAB ========== --}}
+    <div class="tab" data-group="primary" data-tab="inventory">
+      {{!-- Weapons --}}
+      <div class="section-header">
+        <h3>Weapons</h3>
+        <div class="header-buttons">
+          <button type="button" class="btn btn-red add-weapon">+ Add</button>
+        </div>
+      </div>
+
+      {{#each weaponsList}}
+        <div class="inv-item">
+          <span class="inv-name" style="font-weight:bold">{{this.name}}</span>
+          <span class="inv-meta">{{this.type}}</span>
+          <span class="inv-pool">{{this.attrLabel}} + {{this.skillLabel}} ({{this.pool}})</span>
+          <button type="button" class="item-delete delete-weapon" data-index="{{@index}}">&#10005;</button>
+        </div>
+      {{/each}}
+
+      {{#unless weaponsList.length}}
+        <p class="empty-state">No weapons.</p>
+      {{/unless}}
+
+      {{!-- Gear --}}
+      <div class="section-header" style="margin-top: 12px">
+        <h3>Gear</h3>
+        <div class="header-buttons">
+          <button type="button" class="btn btn-red add-gear">+ Add</button>
+        </div>
+      </div>
+
+      {{#each system.gear}}
+        <div class="inv-item">
+          <span class="inv-name">{{this.name}}</span>
+          <span class="inv-meta">{{this.description}}</span>
+          <button type="button" class="item-delete delete-gear" data-index="{{@index}}">&#10005;</button>
+        </div>
+      {{/each}}
+
+      {{#unless system.gear.length}}
+        <p class="empty-state">No gear.</p>
+      {{/unless}}
+
+      {{!-- Currency --}}
+      <div class="section-header" style="margin-top: 14px">
+        <h3>Currency</h3>
+      </div>
+      <div class="currency-block">
+        <div class="currency-display">
+          <div>
+            <div class="currency-label">Cash on hand</div>
+            <div class="currency-amount">${{system.currency.cash}}</div>
+          </div>
+          <div style="display: flex; gap: 4px">
+            <button type="button" class="btn adjust-cash" data-mode="add">+ Add</button>
+            <button type="button" class="btn adjust-cash" data-mode="sub">&minus; Spend</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{!-- ========== XP TAB ========== --}}
+    <div class="tab" data-group="primary" data-tab="xp">
+      <div class="xp-header">
+        <div class="xp-stat">
+          <label>Total</label>
+          <span class="xp-value total">{{system.experience.total}}</span>
+        </div>
+        <span class="xp-arrow">&rarr;</span>
+        <div class="xp-stat">
+          <label>Spent</label>
+          <span class="xp-value spent">{{system.experience.spent}}</span>
+        </div>
+        <span class="xp-arrow">&rarr;</span>
+        <div class="xp-stat">
+          <label>Available</label>
+          <span class="xp-value remaining">{{xpRemaining}}</span>
+        </div>
+      </div>
+
+      <div class="xp-actions">
+        <button type="button" class="btn btn-green xp-add-btn">+ Add XP</button>
+        <button type="button" class="btn btn-red xp-spend-btn">Spend XP</button>
+      </div>
+
+      {{#if system.xpLog.length}}
+        <div class="xp-log-title">History</div>
+        <div class="xp-log">
+          {{#each xpLogReversed}}
+            <div class="log-entry">
+              <span class="log-amount {{this.type}}">{{#if (eq this.type "add")}}+{{else}}-{{/if}}{{this.amount}} XP</span>
+              <span class="log-reason">{{this.reason}}</span>
+            </div>
+          {{/each}}
+        </div>
+      {{/if}}
+    </div>
+
+    {{!-- ========== BIO TAB ========== --}}
+    <div class="tab" data-group="primary" data-tab="bio">
+      <div class="bio-grid">
+        <div class="bio-field">
+          <label>{{localize "VTM.Clan"}}</label>
+          <input type="text" name="system.clan" value="{{system.clan}}" class="bio-value" />
+        </div>
+        <div class="bio-field">
+          <label>{{localize "VTM.Generation"}}</label>
+          <input type="text" name="system.generation" value="{{system.generation}}" class="bio-value" />
+        </div>
+        <div class="bio-field">
+          <label>{{localize "VTM.Sire"}}</label>
+          <input type="text" name="system.sire" value="{{system.sire}}" class="bio-value" />
+        </div>
+        <div class="bio-field">
+          <label>{{localize "VTM.BloodPotency"}}</label>
+          <input type="number" name="system.bloodPotency" value="{{system.bloodPotency}}" class="bio-value" min="0" max="10" />
+        </div>
+        <div class="bio-field">
+          <label>{{localize "VTM.Nature"}}</label>
+          <input type="text" name="system.nature" value="{{system.nature}}" class="bio-value" />
+        </div>
+        <div class="bio-field">
+          <label>{{localize "VTM.Demeanor"}}</label>
+          <input type="text" name="system.demeanor" value="{{system.demeanor}}" class="bio-value" />
+        </div>
+        <div class="bio-field">
+          <label>{{localize "VTM.Concept"}}</label>
+          <input type="text" name="system.concept" value="{{system.concept}}" class="bio-value" />
+        </div>
+        <div class="bio-field">
+          <label>Apparent Age</label>
+          <input type="number" name="system.apparentAge" value="{{system.apparentAge}}" class="bio-value" min="0" />
+        </div>
+        <div class="bio-field">
+          <label>True Age</label>
+          <input type="number" name="system.trueAge" value="{{system.trueAge}}" class="bio-value" min="0" />
+        </div>
+        <div class="bio-field">
+          <label>Haven</label>
+          <input type="text" name="system.haven" value="{{system.haven}}" class="bio-value" />
+        </div>
+      </div>
+
+      <div class="bio-text">
+        {{editor system.biography target="system.biography" button=true editable=editable}}
+      </div>
+    </div>
+
+  </section>
+</form>

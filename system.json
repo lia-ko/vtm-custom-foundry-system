@@ -1,0 +1,30 @@
+{
+  "id": "vtm-custom",
+  "title": "Vampire: The Masquerade (Custom)",
+  "description": "A custom Vampire: The Masquerade system blending V5 and V20 mechanics.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12",
+    "maximum": "12"
+  },
+  "authors": [
+    {
+      "name": "Lia Terechenko"
+    }
+  ],
+  "esmodules": ["module/vtm-custom.mjs"],
+  "styles": ["styles/vtm-custom.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "socket": false,
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "bloodPool"
+}
