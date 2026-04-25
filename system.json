@@ -5,8 +5,8 @@
   "version": "0.1.0",
   "compatibility": {
     "minimum": "12",
-    "verified": "12",
-    "maximum": "12"
+    "verified": "14",
+    "maximum": "14"
   },
   "authors": [
     {
@@ -22,29 +22,14 @@
       "path": "lang/en.json"
     }
   ],
-  "packs": [
-    {
-      "name": "disciplines",
-      "label": "Disciplines",
-      "path": "packs/disciplines",
-      "type": "JournalEntry",
-      "system": "vtm-custom"
+  "documentTypes": {
+    "Actor": {
+      "vampire": {},
+      "coterie": {},
+      "shop": {}
     },
-    {
-      "name": "rituals",
-      "label": "Blood Sorcery Rituals",
-      "path": "packs/rituals",
-      "type": "JournalEntry",
-      "system": "vtm-custom"
-    },
-    {
-      "name": "clans",
-      "label": "Clans",
-      "path": "packs/clans",
-      "type": "JournalEntry",
-      "system": "vtm-custom"
-    }
-  ],
+    "Item": {}
+  },
   "socket": false,
   "gridDistance": 5,
   "gridUnits": "ft",

@@ -115,8 +115,12 @@ Hooks.once("init", () => {
   ]);
 });
 
-Hooks.once("ready", () => {
+Hooks.once("ready", async () => {
   console.log("vtm-custom | System ready");
+
+  // Populate reference journals on first world load
+  const { populateReferenceJournals } = await import("./compendiums.mjs");
+  await populateReferenceJournals();
 });
 
 // Open character creation wizard for new vampire actors
