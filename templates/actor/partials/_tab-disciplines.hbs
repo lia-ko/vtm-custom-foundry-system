@@ -1,0 +1,95 @@
+<div class="tab" data-group="primary" data-tab="disciplines">
+  <div class="section-header">
+    <h3>{{localize "VTM.Disciplines"}}</h3>
+    <div class="header-buttons">
+      <button type="button" class="btn btn-red add-discipline">+ Add Discipline</button>
+    </div>
+  </div>
+
+  {{#each system.disciplines}}
+    <div class="disc-item" data-disc-index="{{@index}}">
+      <div class="disc-header toggle-disc" data-index="{{@index}}">
+        <div class="disc-icon" {{#if this.color}}style="color: {{this.color}}"{{/if}}>{{this.icon}}</div>
+        <span class="disc-name">{{this.name}}</span>
+        {{#if this.path}}<span class="disc-path">{{this.path}}</span>{{/if}}
+        <div class="disc-dots" data-index="{{@index}}">
+          {{#each (dotArray this.value 5)}}
+            <span class="dot {{#if this}}filled{{/if}}" data-disc-dot="{{../@index}}" data-value="{{math @index 1}}"></span>
+          {{/each}}
+        </div>
+        <button type="button" class="disc-delete delete-discipline" data-index="{{@index}}">&#10005;</button>
+        <span class="chevron {{#if this.open}}open{{/if}}">&#9654;</span>
+      </div>
+      {{#if this.open}}
+        <div class="disc-powers">
+          {{#if this.powers.length}}
+            {{#each this.powers}}
+              <div class="power-entry {{#if (gt this.level ../this.value)}}dimmed{{/if}}">
+                <div class="power-row">
+                  <span class="power-level">Lvl {{this.level}}</span>
+                  <span class="power-name expandable-toggle" data-expand-group="powers-{{../@index}}" data-expand-id="{{@index}}">&#9658; {{this.name}}</span>
+                  {{#unless (gt this.level ../this.value)}}
+                    <span class="power-cost">{{this.cost}}</span>
+                    {{#if this.amalgam}}<span class="power-amalgam">{{this.amalgam}}</span>{{/if}}
+                    {{#unless (eq this.pool "--")}}<span class="power-pool">{{this.pool}}</span>{{/unless}}
+                    <span class="power-pin {{#if this.pin}}active{{/if}}" data-disc="{{../@index}}" data-power="{{@index}}">{{#if this.pin}}&#9733;{{else}}&#9734;{{/if}}</span>
+                  {{/unless}}
+                </div>
+                <div class="power-detail expandable-detail" data-expand-group="powers-{{../@index}}" data-expand-id="{{@index}}" style="display:none">
+                  <div class="power-desc">{{this.description}}</div>
+                  <div class="power-meta">
+                    <span>Pool: <strong>{{this.pool}}</strong></span>
+                    <span>Cost: <strong>{{this.cost}}</strong></span>
+                    {{#if this.amalgam}}<span>Amalgam: <strong>{{this.amalgam}}</strong></span>{{/if}}
+                  </div>
+                </div>
+              </div>
+            {{/each}}
+          {{else}}
+            <p class="empty-state">Increase dots to unlock powers.</p>
+          {{/if}}
+        </div>
+      {{/if}}
+    </div>
+  {{/each}}
+
+  {{#unless system.disciplines.length}}
+    <p class="empty-state">No disciplines added yet.</p>
+  {{/unless}}
+
+  <hr class="divider">
+
+  <div class="section-header">
+    <h3>Rituals</h3>
+    <div class="header-buttons">
+      <button type="button" class="btn add-ritual">+ Add Ritual</button>
+      <button type="button" class="btn add-custom-ritual">+ Custom</button>
+    </div>
+  </div>
+
+  {{#each system.rituals}}
+    <div class="ritual-entry">
+      <div class="ritual-item">
+        <span class="ritual-level">Lvl {{this.level}}</span>
+        <span class="ritual-name expandable-toggle" data-expand-group="rituals" data-expand-id="{{@index}}">&#9658; {{this.name}}{{#if this.custom}} *{{/if}}</span>
+        <span class="ritual-cost">{{this.cost}}</span>
+        <button type="button" class="item-delete delete-ritual" data-index="{{@index}}">&#10005;</button>
+      </div>
+      <div class="ritual-detail expandable-detail" data-expand-group="rituals" data-expand-id="{{@index}}" style="display:none">
+        <div class="ritual-detail-desc">{{this.description}}</div>
+        <div class="ritual-detail-meta">
+          <span>Pool: <strong>{{this.pool}}</strong></span>
+          <span>Cost: <strong>{{this.cost}}</strong></span>
+          {{#if this.time}}<span>Time: <strong>{{this.time}}</strong></span>{{/if}}
+        </div>
+        {{#if this.ingredients}}
+          <div class="ritual-detail-ingredients">Ingredients: {{this.ingredients}}</div>
+        {{/if}}
+      </div>
+    </div>
+  {{/each}}
+
+  {{#unless system.rituals.length}}
+    <p class="empty-state">No rituals learned.</p>
+  {{/unless}}
+</div>

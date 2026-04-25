@@ -1,0 +1,22 @@
+<div class="tab" data-group="primary" data-tab="skills">
+  <div class="grid-3col">
+    <div class="col">
+      <h3>{{localize "VTM.Talents"}}</h3>
+      {{#each talentsList}}
+        {{> "systems/vtm-custom/templates/actor/partials/_dot-row.hbs" rollType="skill" dotGroup="talents"}}
+      {{/each}}
+    </div>
+    <div class="col">
+      <h3>{{localize "VTM.Skills"}}</h3>
+      {{#each skillsList}}
+        {{> "systems/vtm-custom/templates/actor/partials/_dot-row.hbs" rollType="skill" dotGroup="skills"}}
+      {{/each}}
+    </div>
+    <div class="col">
+      <h3>{{localize "VTM.Knowledges"}}</h3>
+      {{#each knowledgesList}}
+        {{> "systems/vtm-custom/templates/actor/partials/_dot-row.hbs" rollType="skill" dotGroup="knowledges"}}
+      {{/each}}
+    </div>
+  </div>
+</div>

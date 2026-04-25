@@ -1,0 +1,16 @@
+{
+  "_id": "f559aea9838c60e9",
+  "name": "Banu Haqim",
+  "pages": [
+    {
+      "_id": "391ef408449ea115",
+      "name": "Banu Haqim",
+      "type": "text",
+      "text": {
+        "content": "\n    <h2>Banu Haqim</h2>\n    <p><em>The Judges</em></p>\n    <p><strong>In-Clan Disciplines:</strong> Blood Sorcery, Celerity, Obfuscate</p>\n    <h3>Clan Bane</h3>\n    <p>Blood Addiction. When a Banu Haqim drinks the blood of another Kindred, they must roll Hunger + Blood Potency (Difficulty 2 + Bane Severity). On a failure, they gain a compulsion to continue drinking until the source is drained or they are pulled away. Each drink of Kindred vitae compounds the craving.</p>\n    <h3>Compulsion</h3>\n    <p>Judgment. The vampire is compelled to punish someone nearby who has transgressed against their personal moral code. They must openly reprimand, lecture, or physically punish the offender. Until the transgressor has been chastised, the vampire takes a 2-dice penalty to all rolls not related to delivering judgment.</p>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{{!-- Reusable rollable dot row for attributes and skills.
+     Expects: key, label, dots[], rollType ("attribute" or "skill"), dotGroup (data model path segment) --}}
+<div class="attr-row rollable" data-roll-type="{{rollType}}" data-roll-key="{{key}}">
+  <span class="roll-icon" title="Roll {{label}}">&#9861;</span>
+  <span class="attr-label">{{label}}</span>
+  <div class="dot-set">
+    {{#each dots}}
+      <span class="dot {{#if this}}filled{{/if}}" data-group="{{../dotGroup}}" data-key="{{../key}}" data-value="{{math @index 1}}"></span>
+    {{/each}}
+  </div>
+</div>

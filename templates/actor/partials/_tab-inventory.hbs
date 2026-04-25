@@ -1,0 +1,59 @@
+<div class="tab" data-group="primary" data-tab="inventory">
+  {{!-- Weapons --}}
+  <div class="section-header">
+    <h3>Weapons</h3>
+    <div class="header-buttons">
+      <button type="button" class="btn btn-red add-weapon">+ Add</button>
+    </div>
+  </div>
+
+  {{#each weaponsList}}
+    <div class="inv-item">
+      <span class="inv-name" style="font-weight:bold">{{this.name}}</span>
+      <span class="inv-meta">{{this.type}}</span>
+      <span class="inv-pool">{{this.attrLabel}} + {{this.skillLabel}} ({{this.pool}})</span>
+      <button type="button" class="item-delete delete-weapon" data-index="{{@index}}">&#10005;</button>
+    </div>
+  {{/each}}
+
+  {{#unless weaponsList.length}}
+    <p class="empty-state">No weapons.</p>
+  {{/unless}}
+
+  {{!-- Gear --}}
+  <div class="section-header" style="margin-top: 12px">
+    <h3>Gear</h3>
+    <div class="header-buttons">
+      <button type="button" class="btn btn-red add-gear">+ Add</button>
+    </div>
+  </div>
+
+  {{#each system.gear}}
+    <div class="inv-item">
+      <span class="inv-name">{{this.name}}</span>
+      <span class="inv-meta">{{this.description}}</span>
+      <button type="button" class="item-delete delete-gear" data-index="{{@index}}">&#10005;</button>
+    </div>
+  {{/each}}
+
+  {{#unless system.gear.length}}
+    <p class="empty-state">No gear.</p>
+  {{/unless}}
+
+  {{!-- Currency --}}
+  <div class="section-header" style="margin-top: 14px">
+    <h3>Currency</h3>
+  </div>
+  <div class="currency-block">
+    <div class="currency-display">
+      <div>
+        <div class="currency-label">Cash on hand</div>
+        <div class="currency-amount">${{system.currency.cash}}</div>
+      </div>
+      <div style="display: flex; gap: 4px">
+        <button type="button" class="btn adjust-cash" data-mode="add">+ Add</button>
+        <button type="button" class="btn adjust-cash" data-mode="sub">&minus; Spend</button>
+      </div>
+    </div>
+  </div>
+</div>

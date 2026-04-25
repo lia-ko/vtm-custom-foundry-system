@@ -1,0 +1,16 @@
+{
+  "_id": "bad4f176ae1be867",
+  "name": "Nosferatu",
+  "pages": [
+    {
+      "_id": "0fff64446d2f3b14",
+      "name": "Nosferatu",
+      "type": "text",
+      "text": {
+        "content": "\n    <h2>Nosferatu</h2>\n    <p><em>The Sewer Rats</em></p>\n    <p><strong>In-Clan Disciplines:</strong> Animalism, Obfuscate, Potence</p>\n    <h3>Clan Bane</h3>\n    <p>Repulsive. Every Nosferatu is physically monstrous — hideously deformed in a way unique to them. This cannot be hidden by mundane means (makeup, surgery, masks). Their Appearance-related dice pools automatically fail in any situation where their true form is visible. They must rely on Obfuscate (Mask of a Thousand Faces) to pass among mortals. Even Masked, close physical contact (touching, intimate situations) may reveal something wrong. Add Bane Severity to the Difficulty of any Social roll when their true appearance is visible.</p>\n    <h3>Compulsion</h3>\n    <p>Cryptophilia. The vampire becomes obsessed with learning a secret. They must uncover hidden information — eavesdrop, hack, investigate, interrogate, or spy. The secret must be genuinely unknown to them and non-trivial. Until they learn something they didn't know before (and that the holder would prefer to keep hidden), they suffer a 2-dice penalty to all rolls not related to information gathering.</p>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

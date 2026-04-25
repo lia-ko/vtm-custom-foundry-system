@@ -1,0 +1,16 @@
+{
+  "_id": "eb203a0c539567d3",
+  "name": "Hecata",
+  "pages": [
+    {
+      "_id": "3079860642872245",
+      "name": "Hecata",
+      "type": "text",
+      "text": {
+        "content": "\n    <h2>Hecata</h2>\n    <p><em>The Clan of Death</em></p>\n    <p><strong>In-Clan Disciplines:</strong> Auspex, Fortitude, Oblivion</p>\n    <h3>Clan Bane</h3>\n    <p>Painful Kiss. The Hecata's bite causes excruciating agony instead of ecstasy. Mortals bitten must succeed on a Stamina + Resolve roll (Difficulty = 2 + Bane Severity) or scream and struggle. The Hecata must grapple or restrain victims to feed, making hunting conspicuous and difficult. Willing vessels still experience pain. The Lingering Kiss Presence power does not mitigate this.</p>\n    <h3>Compulsion</h3>\n    <p>Morbidity. The vampire becomes obsessed with death and the dead. They must interact with a corpse, ghost, or memento mori — studying remains, communing with spirits, visiting a grave, or discussing death at length. Until they engage meaningfully with mortality, they suffer a 2-dice penalty to all rolls not related to death or the dead.</p>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "_id": "f679fb58d9720abf",
+  "name": "Tzimisce",
+  "pages": [
+    {
+      "_id": "689b021337b75619",
+      "name": "Tzimisce",
+      "type": "text",
+      "text": {
+        "content": "\n    <h2>Tzimisce</h2>\n    <p><em>The Dragons</em></p>\n    <p><strong>In-Clan Disciplines:</strong> Animalism, Dominate, Protean</p>\n    <h3>Clan Bane</h3>\n    <p>Grounded. The Tzimisce must sleep in or near soil from a place meaningful to them — their birthplace, their domain, a conquered enemy's grave. Without this soil, they cannot enter restful sleep: they rise each night with a Bane Severity penalty to all dice pools until they rest properly. The soil requirement travels with them — many Tzimisce carry bags of their homeland's earth.</p>\n    <h3>Compulsion</h3>\n    <p>Covetousness. The vampire becomes possessive of a person, object, or domain in the scene. They must assert ownership — marking territory, claiming an item, or declaring someone under their protection. They cannot share, delegate, or allow others to use the claimed thing. Until they have established undeniable possession, they suffer a 2-dice penalty to all rolls not related to the claim.</p>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

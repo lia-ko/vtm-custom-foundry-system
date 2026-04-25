@@ -1,0 +1,16 @@
+{
+  "_id": "52c51fadb535cfe4",
+  "name": "Level 5 Rituals",
+  "pages": [
+    {
+      "_id": "7d45abdacf23ed16",
+      "name": "Level 5 Rituals",
+      "type": "text",
+      "text": {
+        "content": "<h2>Blood Sorcery Rituals — Level 5</h2>\n\n    <h3>Escape to a True Friend</h3>\n    <p><strong>Cost:</strong> 2 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 3 hours preparation; instant activation</p>\n    <p><strong>Ingredients:</strong> A lock of hair and a drop of blood from both the caster and the friend, a circle of candles</p>\n    <p>In a moment of dire need, the caster is instantly transported to the location of a person they consider a true friend. The caster vanishes and reappears beside this ally, regardless of distance. Can only be used once per lunar cycle.</p>\n    <hr>\n  \n\n    <h3>Blood Contract</h3>\n    <p><strong>Cost:</strong> 2 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 6 hours</p>\n    <p><strong>Ingredients:</strong> Vellum made from the skin of an animal sacrificed under a new moon, vitae from all parties</p>\n    <p>Creates a mystically binding contract written in vitae. All parties who sign suffer aggravated damage and a curse if they break the terms. The contract burns to ash if fulfilled or if all parties are destroyed.</p>\n    <hr>\n  \n\n    <h3>Summon the Departed</h3>\n    <p><strong>Cost:</strong> 3 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 2 hours</p>\n    <p><strong>Ingredients:</strong> A personal possession of the deceased, graveyard dirt, vitae, black candles</p>\n    <p>Conjures the ghost of a deceased mortal or destroyed Kindred. The spirit is compelled to answer questions honestly for a number of minutes equal to the caster's successes. The spirit may be hostile.</p>\n    <hr>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

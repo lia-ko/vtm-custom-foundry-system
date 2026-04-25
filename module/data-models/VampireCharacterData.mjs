@@ -1,3 +1,5 @@
+import { getBloodPotencyEffects } from "../data/blood-potency.mjs";
+
 const { SchemaField, NumberField, StringField, ArrayField, BooleanField, HTMLField } = foundry.data.fields;
 
 function attributeField(initial = 1) {
@@ -154,18 +156,21 @@ export default class VampireCharacterData extends foundry.abstract.TypeDataModel
       // --- Backgrounds (dynamic list) ---
       backgrounds: new ArrayField(new SchemaField({
         name: new StringField({ required: true, initial: "" }),
-        value: new NumberField({ required: true, integer: true, initial: 0, min: 0, max: 5 }),
+        value: new NumberField({ required: true, integer: true, initial: 1, min: 1, max: 5 }),
+        description: new StringField({ initial: "" }),
       })),
 
       // --- Merits & Flaws (dynamic list) ---
       merits: new ArrayField(new SchemaField({
         name: new StringField({ required: true, initial: "" }),
-        value: new NumberField({ required: true, integer: true, initial: 0 }),
+        value: new NumberField({ required: true, integer: true, initial: 1, min: 1, max: 5 }),
+        category: new StringField({ initial: "" }),
         description: new StringField({ initial: "" }),
       })),
       flaws: new ArrayField(new SchemaField({
         name: new StringField({ required: true, initial: "" }),
-        value: new NumberField({ required: true, integer: true, initial: 0 }),
+        value: new NumberField({ required: true, integer: true, initial: 1, min: 1, max: 5 }),
+        category: new StringField({ initial: "" }),
         description: new StringField({ initial: "" }),
       })),
 
@@ -199,6 +204,21 @@ export default class VampireCharacterData extends foundry.abstract.TypeDataModel
     // Count damaged health boxes
     this.healthDamaged = (this.health ?? []).filter(v => v > 0).length;
     this.healthTotal = (this.health ?? []).length;
+
+    // Blood Potency effects
+    this.bpEffects = getBloodPotencyEffects(this.bloodPotency);
+
+    // Token bar-compatible health (undamaged boxes as "current", total as "max")
+    this.healthBar = {
+      value: this.healthTotal - this.healthDamaged,
+      max: this.healthTotal,
+    };
+
+    // Token bar-compatible hunger (inverted: 5 - hunger so bar drains as hunger rises)
+    this.hungerBar = {
+      value: this.hunger,
+      max: 5,
+    };
 
     // Remaining XP
     this.experience.remaining = this.experience.total - this.experience.spent;

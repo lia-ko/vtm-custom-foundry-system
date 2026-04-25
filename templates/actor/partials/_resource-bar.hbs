@@ -1,0 +1,84 @@
+{{!-- Resource bar: health, willpower, hunger, humanity, blood potency, actions --}}
+<div class="resource-bar">
+  <div class="resource-trackers">
+    {{!-- Health (V5 damage boxes) --}}
+    <div class="tracker-group">
+      <label>{{localize "VTM.Health"}}</label>
+      <div class="tracker-row">
+        {{#each healthBoxes}}
+          <span class="dmg-box {{this.class}}" data-tracker="health" data-index="{{@index}}" title="Click to cycle: empty > superficial > aggravated"></span>
+        {{/each}}
+      </div>
+      <div class="tracker-value">{{healthDamaged}} / {{healthTotal}} damaged</div>
+    </div>
+
+    <div class="dmg-legend">
+      <span><span class="dl-box" style="background:#6b3040;border-color:#8a4a5a"></span>Superficial</span>
+      <span><span class="dl-box" style="background:#cc2233;border-color:#ee3344"></span>Aggravated</span>
+    </div>
+
+    {{!-- Willpower --}}
+    <div class="tracker-group">
+      <label>{{localize "VTM.Willpower"}}</label>
+      <div class="tracker-row">
+        {{#each willpowerBoxes}}
+          <span class="box {{#if this}}filled{{/if}}" data-tracker="willpower" data-index="{{@index}}"></span>
+        {{/each}}
+      </div>
+      <div class="tracker-value">{{system.willpower.current}} / {{system.willpower.max}}</div>
+    </div>
+
+    {{!-- Hunger --}}
+    <div class="tracker-group">
+      <label>{{localize "VTM.Hunger"}}</label>
+      <div class="tracker-row">
+        {{#each hungerDots}}
+          <span class="dot {{#if this}}hunger-filled{{/if}}" data-tracker="hunger" data-index="{{@index}}"></span>
+        {{/each}}
+      </div>
+      <div class="tracker-value">{{system.hunger}} / 5</div>
+    </div>
+
+    {{!-- Humanity --}}
+    <div class="tracker-group">
+      <label>{{localize "VTM.Humanity"}}</label>
+      <div class="tracker-row">
+        {{#each humanityDots}}
+          <span class="dot {{#if this}}filled{{/if}}" data-tracker="humanity" data-index="{{@index}}"></span>
+        {{/each}}
+      </div>
+    </div>
+
+    {{!-- Blood Potency --}}
+    <div class="tracker-group">
+      <label>{{localize "VTM.BloodPotency"}}</label>
+      <div class="tracker-row">
+        {{#each bloodPotencyDots}}
+          <span class="dot {{#if this}}filled{{/if}}" data-tracker="bloodPotency" data-index="{{@index}}"></span>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+  {{!-- Blood Potency effects summary --}}
+  {{#if system.bpEffects}}
+    <div class="bp-effects">
+      <span class="bp-tag" title="Blood Surge bonus dice">Surge +{{system.bpEffects.surgeBonus}}</span>
+      <span class="bp-tag" title="Superficial damage mended per Rouse">Mend {{system.bpEffects.mendAmount}}</span>
+      <span class="bp-tag" title="Bonus dice to discipline powers">Power +{{system.bpEffects.powerBonus}}</span>
+      <span class="bp-tag" title="Clan bane severity">Bane {{system.bpEffects.baneSeverity}}</span>
+      {{#if system.bpEffects.rouseReroll}}<span class="bp-tag" title="Rouse check dice re-rolled">Rouse Re-roll {{system.bpEffects.rouseReroll}}</span>{{/if}}
+      {{#unless (eq system.bpEffects.feedingPenalty "No effect")}}<span class="bp-tag bp-feeding" title="Feeding restriction">{{system.bpEffects.feedingPenalty}}</span>{{/unless}}
+    </div>
+  {{/if}}
+
+  {{!-- Action buttons --}}
+  <div class="resource-actions">
+    <span class="actions-label">Actions</span>
+    <button type="button" class="action-btn primary quick-roll">&#9861; Quick roll</button>
+    <div class="action-separator"></div>
+    <button type="button" class="action-btn rouse-check">&#9862; Rouse check</button>
+    <div class="action-separator"></div>
+    <button type="button" class="action-btn frenzy-btn frenzy-check">&#9760; Frenzy check</button>
+  </div>
+</div>

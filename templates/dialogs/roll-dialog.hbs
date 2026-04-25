@@ -1,0 +1,30 @@
+<form class="vtm-roll-dialog">
+  <div class="form-group">
+    <label>Attribute</label>
+    <select name="attr">
+      {{#each attributes}}
+        <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{this.label}} ({{this.value}})</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Skill</label>
+    <select name="skill">
+      {{#each skills}}
+        <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{this.label}} ({{this.value}})</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Modifier</label>
+    <input type="number" name="mod" value="0" />
+  </div>
+  <div class="form-group">
+    <label>Difficulty (successes needed)</label>
+    <input type="number" name="diff" value="1" min="1" />
+  </div>
+  <div class="form-group">
+    <label>Hunger Dice</label>
+    <input type="number" name="hunger" value="{{hunger}}" min="0" max="5" />
+  </div>
+</form>

@@ -38,7 +38,25 @@ Hooks.once("init", () => {
 
   // Preload Handlebars templates
   loadTemplates([
+    // Main sheet
     "systems/vtm-custom/templates/actor/vampire-sheet.hbs",
+    // Sheet partials
+    "systems/vtm-custom/templates/actor/partials/_resource-bar.hbs",
+    "systems/vtm-custom/templates/actor/partials/_dot-row.hbs",
+    "systems/vtm-custom/templates/actor/partials/_tab-attributes.hbs",
+    "systems/vtm-custom/templates/actor/partials/_tab-skills.hbs",
+    "systems/vtm-custom/templates/actor/partials/_tab-disciplines.hbs",
+    "systems/vtm-custom/templates/actor/partials/_tab-traits.hbs",
+    "systems/vtm-custom/templates/actor/partials/_tab-inventory.hbs",
+    "systems/vtm-custom/templates/actor/partials/_tab-xp.hbs",
+    "systems/vtm-custom/templates/actor/partials/_tab-bio.hbs",
+    // Dialog templates
+    "systems/vtm-custom/templates/dialogs/roll-dialog.hbs",
+    "systems/vtm-custom/templates/dialogs/frenzy-dialog.hbs",
+    "systems/vtm-custom/templates/dialogs/add-from-list.hbs",
+    "systems/vtm-custom/templates/dialogs/custom-ritual.hbs",
+    "systems/vtm-custom/templates/dialogs/custom-merit-flaw.hbs",
+    "systems/vtm-custom/templates/dialogs/xp-dialog.hbs",
   ]);
 });
 

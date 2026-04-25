@@ -1,0 +1,16 @@
+{
+  "_id": "fc71f7d47b5860ca",
+  "name": "Level 4 Rituals",
+  "pages": [
+    {
+      "_id": "49d6dc0bb4efd004",
+      "name": "Level 4 Rituals",
+      "type": "text",
+      "text": {
+        "content": "<h2>Blood Sorcery Rituals — Level 4</h2>\n\n    <h3>Warding Circle vs Spirits</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 1 hour</p>\n    <p><strong>Ingredients:</strong> Salt, iron filings, and vitae traced in a circle</p>\n    <p>Creates an invisible circle that no spirit, ghost, or wraith can cross. Spirits who attempt to breach it suffer damage and are repelled. Lasts until sunrise.</p>\n    <hr>\n  \n\n    <h3>Heart of Stone</h3>\n    <p><strong>Cost:</strong> 2 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 4 hours</p>\n    <p><strong>Ingredients:</strong> A carved stone replica of a heart, vitae</p>\n    <p>The caster mystically transforms their heart to stone, rendering them immune to staking. Emotions are dulled and social interactions suffer, but the caster is protected from the most feared Kindred vulnerability.</p>\n    <hr>\n  \n\n    <h3>Bone of Lies</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 3 hours</p>\n    <p><strong>Ingredients:</strong> A mortal bone (finger bone or rib), soaked in vitae</p>\n    <p>Enchants a mortal bone so that whoever holds it cannot speak a deliberate lie. The holder is compelled toward truth, though they may remain silent. The bone blackens slightly with each lie it prevents.</p>\n    <hr>\n  \n\n    <h3>Splinter Servant</h3>\n    <p><strong>Cost:</strong> 2 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 2 hours</p>\n    <p><strong>Ingredients:</strong> A sharpened stake, vitae, a strand of the target's hair</p>\n    <p>Animates a wooden stake to fly toward a designated target and attempt to stake them in the heart. The stake acts with a dice pool determined by the caster's ritual successes.</p>\n    <hr>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

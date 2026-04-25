@@ -1,0 +1,35 @@
+<div class="tab" data-group="primary" data-tab="xp">
+  <div class="xp-header">
+    <div class="xp-stat">
+      <label>Total</label>
+      <span class="xp-value total">{{system.experience.total}}</span>
+    </div>
+    <span class="xp-arrow">&rarr;</span>
+    <div class="xp-stat">
+      <label>Spent</label>
+      <span class="xp-value spent">{{system.experience.spent}}</span>
+    </div>
+    <span class="xp-arrow">&rarr;</span>
+    <div class="xp-stat">
+      <label>Available</label>
+      <span class="xp-value remaining">{{xpRemaining}}</span>
+    </div>
+  </div>
+
+  <div class="xp-actions">
+    <button type="button" class="btn btn-green xp-add-btn">+ Add XP</button>
+    <button type="button" class="btn btn-red xp-spend-btn">Spend XP</button>
+  </div>
+
+  {{#if system.xpLog.length}}
+    <div class="xp-log-title">History</div>
+    <div class="xp-log">
+      {{#each xpLogReversed}}
+        <div class="log-entry">
+          <span class="log-amount {{this.type}}">{{#if (eq this.type "add")}}+{{else}}-{{/if}}{{this.amount}} XP</span>
+          <span class="log-reason">{{this.reason}}</span>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>

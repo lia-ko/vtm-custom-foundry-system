@@ -1,0 +1,16 @@
+{
+  "_id": "6bd6cf8b431acf58",
+  "name": "Gangrel",
+  "pages": [
+    {
+      "_id": "c56faea82e583286",
+      "name": "Gangrel",
+      "type": "text",
+      "text": {
+        "content": "\n    <h2>Gangrel</h2>\n    <p><em>The Ferals</em></p>\n    <p><strong>In-Clan Disciplines:</strong> Animalism, Fortitude, Protean</p>\n    <h3>Clan Bane</h3>\n    <p>Animal Features. Whenever a Gangrel frenzies, they gain a permanent bestial feature — a patch of fur, a fang that won't retract, claws, a tail nub, slitted pupils, pointed ears, or similar. Each feature reduces one Social Attribute (except Intimidation) by 1, to a minimum of 0. These features are cumulative and cannot be healed by normal means. Fleshcrafting or similar powers can temporarily hide them.</p>\n    <h3>Compulsion</h3>\n    <p>Feral Impulses. The vampire regresses to an animalistic state. They must resolve the current situation through fight or flight — complex plans, negotiation, and technology are beyond them. They must choose: attack the nearest threat or flee the scene entirely. Until they commit to one, they suffer a 2-dice penalty to all Mental and Social rolls.</p>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

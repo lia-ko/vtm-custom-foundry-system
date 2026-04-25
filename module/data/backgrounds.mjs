@@ -1,0 +1,94 @@
+/**
+ * VTM V5 Backgrounds Database
+ *
+ * Each entry contains:
+ *   name        - background name
+ *   description - description with what each dot level represents
+ *   min         - minimum dots
+ *   max         - maximum dots
+ */
+
+export const BACKGROUND_DB = [
+  {
+    name: "Allies",
+    description: "Mortals who support and assist you in a specific area of influence. They act willingly but have their own lives and limits.\n1 — A single useful contact who will do small favors.\n2 — A few reliable allies in one sphere (police, media, etc.).\n3 — Several well-placed allies who will take moderate risks.\n4 — A network of influential allies across an organization.\n5 — Powerful allies at the highest levels who will take serious risks for you.",
+    min: 1, max: 5,
+  },
+  {
+    name: "Contacts",
+    description: "People who provide information across various social spheres. They share intel but won't take action or personal risks for you.\n1 — One sphere of contacts (street, academic, corporate).\n2 — Two spheres of contacts.\n3 — Three spheres, with some well-placed sources.\n4 — Four spheres, including hard-to-access circles.\n5 — Five or more spheres; you can find information on almost anything given time.",
+    min: 1, max: 5,
+  },
+  {
+    name: "Domain",
+    description: "Territory you control or have been granted by Kindred authority. Your domain provides feeding grounds and political standing.\n1 — A single block or small building (a bar, a shop).\n2 — A few blocks or a small neighborhood.\n3 — A significant neighborhood or district.\n4 — A large district or multiple neighborhoods.\n5 — A major section of the city; you are a power in the domain game.",
+    min: 1, max: 5,
+  },
+  {
+    name: "Fame",
+    description: "Mortal notoriety and public recognition. Adds dice to Social rolls with mortals who recognize you but makes anonymity harder.\n1 — Locally known (neighborhood celebrity, local band, popular blogger).\n2 — Regionally known (city-wide reputation, minor media presence).\n3 — Nationally known (celebrity status, social media influencer, published author).",
+    min: 1, max: 3,
+  },
+  {
+    name: "Haven",
+    description: "The security and quality of your daytime resting place. A good Haven protects against intrusion, sunlight, and discovery.\n1 — A basic crash pad: an abandoned building, a rented storage unit, minimal security.\n2 — A decent apartment or house with locks and covered windows. Reasonably safe.\n3 — A well-secured location: reinforced doors, alarm system, no windows, private access.\n4 — A fortified haven: security cameras, multiple locks, hidden entrance, panic room.\n5 — A true fortress: multiple redundant security systems, guards or ghouls, concealed underground chambers, virtually impossible to breach.",
+    min: 1, max: 5,
+  },
+  {
+    name: "Herd",
+    description: "A group of mortals you feed from regularly — blood dolls, groupies, cultists, or a managed group. Reduces hunting difficulty and Masquerade risk.\n1 — 3-5 accessible vessels; you rarely go hungry but options are limited.\n2 — 6-10 vessels; comfortable feeding with some variety.\n3 — A sizeable herd (10-20); hunting rolls are rarely needed.\n4 — A large, well-managed herd (20-30); feeding is almost effortless.\n5 — An extensive network (30+); you virtually never need to hunt and can feed others from your herd.",
+    min: 1, max: 5,
+  },
+  {
+    name: "Influence",
+    description: "Political or institutional pull in mortal society. Can be used to cover up Masquerade breaches, arrange logistics, block investigations, or pull strings.\n1 — Minor influence in a single institution (a precinct, a local paper).\n2 — Moderate influence; you can pull strings in one major institution.\n3 — Significant influence across one or two institutions.\n4 — Major influence; you can shape policy in your area of control.\n5 — Vast influence; you are a hidden power behind major mortal institutions.",
+    min: 1, max: 5,
+  },
+  {
+    name: "Mask",
+    description: "A carefully maintained mortal identity with documentation, credit history, and social presence. Essential for operating in the modern world and avoiding the Second Inquisition.\n1 — A basic fake ID and a burner phone. Won't survive scrutiny.\n2 — A functional identity: driver's license, bank account, rental history. Passes casual checks.\n3 — A solid identity: employment records, tax history, social media presence. Passes background checks.\n4 — A deep cover: years of consistent records, professional reputation, multiple references.\n5 — An impeccable identity: impossible to distinguish from a real person's history even under federal investigation.",
+    min: 1, max: 5,
+  },
+  {
+    name: "Mawla",
+    description: "A Kindred mentor or patron — an elder or established vampire who offers guidance, protection, or resources. The relationship is not equal; they expect service in return.\n1 — An ancilla who occasionally offers advice.\n2 — A respected elder who provides guidance and minor favors.\n3 — A powerful elder who actively protects and sponsors you.\n4 — A very influential Kindred (Primogen, Seneschal) who champions your interests.\n5 — One of the most powerful Kindred in the city (Prince, Archbishop) considers you a valued protege.",
+    min: 1, max: 5,
+  },
+  {
+    name: "Resources",
+    description: "Your material wealth, income, and financial assets.\n1 — A small apartment, a used car, about $1,000/month disposable income.\n2 — A nice apartment, a reliable car, about $2,500/month.\n3 — A house or condo, a luxury car, about $10,000/month. Comfortable living.\n4 — Multiple properties, household staff, about $50,000/month. Upper class.\n5 — Vast wealth: mansions, private security, investment portfolios, effectively unlimited personal funds.",
+    min: 1, max: 5,
+  },
+  {
+    name: "Retainers",
+    description: "Loyal personal servants — ghouls, employees, or devoted followers. Each dot represents one retainer.\n1 — One retainer: a driver, assistant, or lookout.\n2 — Two retainers covering different roles.\n3 — Three retainers; a small personal staff.\n4 — Four retainers; a well-rounded entourage (bodyguard, assistant, hacker, spy).\n5 — Five retainers; a professional team capable of complex operations.",
+    min: 1, max: 5,
+  },
+  {
+    name: "Status",
+    description: "Your standing and reputation within Kindred society (Camarilla, Anarch Movement, or other sect).\n1 — Recognized neonate; you are known and accepted but have no influence.\n2 — Respected member; your opinions carry some weight.\n3 — Influential ancilla or well-known elder; you have a voice in politics.\n4 — Primogen, Baron, or equivalent; you hold formal authority.\n5 — Prince, Archbishop, or sect leader; your word is law in your domain.",
+    min: 1, max: 5,
+  },
+  {
+    name: "Cobweb",
+    description: "Connection to the Malkavian Madness Network — a psychic web linking all Malkavians. Allows receiving and sending impressions, warnings, and visions through the network. Malkavian only.\n1 — Occasional flashes of insight from the network; unreliable and confusing.\n2 — Regular reception of impressions; you can sometimes identify their source.\n3 — Active participation; you can send and receive specific messages.\n4 — Strong connection; you receive early warnings of danger and can broadcast widely.\n5 — A nexus in the network; you sense the emotional state of Malkavians city-wide.",
+    min: 1, max: 5,
+  },
+];
+
+/**
+ * Get all background names.
+ * @returns {string[]}
+ */
+export function getBackgroundNames() {
+  return BACKGROUND_DB.map(b => b.name);
+}
+
+/**
+ * Get a background entry by name.
+ * @param {string} name
+ * @returns {object|null}
+ */
+export function getBackground(name) {
+  return BACKGROUND_DB.find(b => b.name === name) || null;
+}

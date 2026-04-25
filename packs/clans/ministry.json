@@ -1,0 +1,16 @@
+{
+  "_id": "5c69e1d4b612f187",
+  "name": "Ministry",
+  "pages": [
+    {
+      "_id": "c383e54e47b96507",
+      "name": "Ministry",
+      "type": "text",
+      "text": {
+        "content": "\n    <h2>Ministry</h2>\n    <p><em>The Serpents</em></p>\n    <p><strong>In-Clan Disciplines:</strong> Obfuscate, Presence, Protean</p>\n    <h3>Clan Bane</h3>\n    <p>Vulnerability to Light. The Ministry are hypersensitive to light. They take Bane Severity as additional Aggravated damage from sunlight exposure. Bright artificial light (spotlights, high-beam headlights, flashbangs) causes them to suffer a Bane Severity penalty to all dice pools while exposed. Even normal indoor lighting can be uncomfortable, though not penalizing.</p>\n    <h3>Compulsion</h3>\n    <p>Transgression. The vampire is compelled to tempt someone into breaking a moral, ethical, or social rule. They must identify a prohibition the target holds and entice them to violate it — a vow, a law, a taboo, a diet, sobriety, fidelity. The temptation must be genuine and the target must have real choice. Until someone transgresses due to the vampire's influence, they suffer a 2-dice penalty to all rolls.</p>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

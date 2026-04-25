@@ -1,0 +1,22 @@
+<div class="tab" data-group="primary" data-tab="attributes">
+  <div class="grid-3col">
+    <div class="col">
+      <h3>Physical</h3>
+      {{#each physicalAttrs}}
+        {{> "systems/vtm-custom/templates/actor/partials/_dot-row.hbs" rollType="attribute" dotGroup="attributes"}}
+      {{/each}}
+    </div>
+    <div class="col">
+      <h3>Social</h3>
+      {{#each socialAttrs}}
+        {{> "systems/vtm-custom/templates/actor/partials/_dot-row.hbs" rollType="attribute" dotGroup="attributes"}}
+      {{/each}}
+    </div>
+    <div class="col">
+      <h3>Mental</h3>
+      {{#each mentalAttrs}}
+        {{> "systems/vtm-custom/templates/actor/partials/_dot-row.hbs" rollType="attribute" dotGroup="attributes"}}
+      {{/each}}
+    </div>
+  </div>
+</div>

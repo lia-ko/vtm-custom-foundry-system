@@ -1,0 +1,16 @@
+{
+  "_id": "51d5413bab1586ad",
+  "name": "Brujah",
+  "pages": [
+    {
+      "_id": "68a337d9c87057a7",
+      "name": "Brujah",
+      "type": "text",
+      "text": {
+        "content": "\n    <h2>Brujah</h2>\n    <p><em>The Rabble</em></p>\n    <p><strong>In-Clan Disciplines:</strong> Celerity, Potence, Presence</p>\n    <h3>Clan Bane</h3>\n    <p>Short Fuse. The Brujah's Beast is close to the surface. Subtract Bane Severity dice from any roll to resist Frenzy. Brujah enter frenzy more easily than any other clan — even minor provocations can set them off.</p>\n    <h3>Compulsion</h3>\n    <p>Rebellion. The vampire must go against the wishes of whoever holds authority in the scene — Prince, boss, Primogen, or anyone giving orders. They must openly defy, contradict, or undermine the authority figure. Until they do, they suffer a 2-dice penalty to all rolls. Simply remaining silent is not enough — they must act against the authority.</p>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

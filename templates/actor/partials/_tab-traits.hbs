@@ -1,0 +1,99 @@
+<div class="tab" data-group="primary" data-tab="traits">
+
+  {{!-- Backgrounds --}}
+  <div class="section-header">
+    <h3>{{localize "VTM.Backgrounds"}}</h3>
+    <div class="header-buttons">
+      <button type="button" class="btn btn-red add-background">+ Add</button>
+    </div>
+  </div>
+
+  {{#each system.backgrounds}}
+    <div class="mf-entry">
+      <div class="mf-row">
+        <span class="mf-name expandable-toggle" data-expand-group="backgrounds" data-expand-id="{{@index}}">&#9658; {{this.name}}</span>
+        <div class="dot-set">
+          {{#each (dotArray this.value 5)}}
+            <span class="dot {{#if this}}filled{{/if}}" data-adv-type="backgrounds" data-adv-index="{{../@index}}" data-value="{{math @index 1}}"></span>
+          {{/each}}
+        </div>
+        <button type="button" class="item-delete delete-background" data-index="{{@index}}">&#10005;</button>
+      </div>
+      {{#if this.description}}
+        <div class="mf-detail expandable-detail" data-expand-group="backgrounds" data-expand-id="{{@index}}" style="display:none">
+          <div class="mf-detail-desc">{{this.description}}</div>
+        </div>
+      {{/if}}
+    </div>
+  {{/each}}
+
+  {{#unless system.backgrounds.length}}
+    <p class="empty-state">No backgrounds.</p>
+  {{/unless}}
+
+  <hr class="divider">
+
+  {{!-- Merits --}}
+  <div class="section-header">
+    <h3>{{localize "VTM.Merits"}}</h3>
+    <div class="header-buttons">
+      <button type="button" class="btn btn-red add-merit">+ Add Merit</button>
+      <button type="button" class="btn add-custom-merit">+ Custom</button>
+    </div>
+  </div>
+
+  {{#each system.merits}}
+    <div class="mf-entry">
+      <div class="mf-row">
+        <span class="mf-cat-tag">{{this.category}}</span>
+        <span class="mf-name expandable-toggle" data-expand-group="merits" data-expand-id="{{@index}}">&#9658; {{this.name}}</span>
+        <div class="dot-set">
+          {{#each (dotArray this.value 5)}}
+            <span class="dot {{#if this}}filled{{/if}}" data-adv-type="merits" data-adv-index="{{../@index}}" data-value="{{math @index 1}}"></span>
+          {{/each}}
+        </div>
+        <button type="button" class="item-delete delete-merit" data-index="{{@index}}">&#10005;</button>
+      </div>
+      <div class="mf-detail expandable-detail" data-expand-group="merits" data-expand-id="{{@index}}" style="display:none">
+        <div class="mf-detail-desc">{{this.description}}</div>
+      </div>
+    </div>
+  {{/each}}
+
+  {{#unless system.merits.length}}
+    <p class="empty-state">No merits.</p>
+  {{/unless}}
+
+  <hr class="divider">
+
+  {{!-- Flaws --}}
+  <div class="section-header">
+    <h3>{{localize "VTM.Flaws"}}</h3>
+    <div class="header-buttons">
+      <button type="button" class="btn btn-red add-flaw">+ Add Flaw</button>
+      <button type="button" class="btn add-custom-flaw">+ Custom</button>
+    </div>
+  </div>
+
+  {{#each system.flaws}}
+    <div class="mf-entry">
+      <div class="mf-row">
+        <span class="mf-cat-tag flaw-tag">{{this.category}}</span>
+        <span class="mf-name expandable-toggle" data-expand-group="flaws" data-expand-id="{{@index}}">&#9658; {{this.name}}</span>
+        <div class="dot-set">
+          {{#each (dotArray this.value 5)}}
+            <span class="dot {{#if this}}filled{{/if}}" data-adv-type="flaws" data-adv-index="{{../@index}}" data-value="{{math @index 1}}"></span>
+          {{/each}}
+        </div>
+        <button type="button" class="item-delete delete-flaw" data-index="{{@index}}">&#10005;</button>
+      </div>
+      <div class="mf-detail expandable-detail" data-expand-group="flaws" data-expand-id="{{@index}}" style="display:none">
+        <div class="mf-detail-desc">{{this.description}}</div>
+      </div>
+    </div>
+  {{/each}}
+
+  {{#unless system.flaws.length}}
+    <p class="empty-state">No flaws.</p>
+  {{/unless}}
+</div>

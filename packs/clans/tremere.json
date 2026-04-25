@@ -1,0 +1,16 @@
+{
+  "_id": "e6e4f288557705f3",
+  "name": "Tremere",
+  "pages": [
+    {
+      "_id": "3603e3939a201927",
+      "name": "Tremere",
+      "type": "text",
+      "text": {
+        "content": "\n    <h2>Tremere</h2>\n    <p><em>The Warlocks</em></p>\n    <p><strong>In-Clan Disciplines:</strong> Auspex, Blood Sorcery, Dominate</p>\n    <h3>Clan Bane</h3>\n    <p>Broken Blood Bond. The Tremere cannot form Blood Bonds with other Kindred — neither as regnant nor thrall. Their blood does not create loyalty in other vampires, and drinking another vampire's blood does not bind them. This makes Tremere politically unreliable — they cannot be bound to a Prince's service, and their own childer may turn against them freely. They can still Bond mortals and ghouls normally.</p>\n    <h3>Compulsion</h3>\n    <p>Perfectionism. The vampire must meet an impossibly high standard in whatever they are currently doing. If they cannot perform a task flawlessly, they would rather not attempt it at all. They will redo completed work, refuse adequate solutions in favor of perfect ones, and criticize others' efforts. Until they achieve a critical success on a relevant roll or abandon the task entirely, they suffer a 2-dice penalty to all rolls.</p>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

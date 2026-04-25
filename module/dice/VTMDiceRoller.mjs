@@ -132,4 +132,65 @@ export class VTMDiceRoller {
 
     return { roll, results, successes, outcome, outcomeClass, messyCrit, bestialFailure, passed };
   }
+
+  /**
+   * Rouse Check — roll 1d10. Failure (1-5) increases Hunger.
+   * @param {object} options
+   * @param {string} options.label  - What the rouse is for (e.g. "Blood Surge", "Dominate")
+   * @param {number} options.count  - Number of rouse checks (default 1, some powers cost 2)
+   * @param {Actor} [options.actor] - Actor making the check. If provided, auto-updates Hunger.
+   * @returns {object} { results: [{die, failed}], failures, hungerGain, newHunger }
+   */
+  static async rouseCheck({ label = "Rouse Check", count = 1, actor = null } = {}) {
+    const results = [];
+    let failures = 0;
+
+    for (let i = 0; i < count; i++) {
+      const roll = await new Roll("1d10").evaluate();
+      const die = roll.total;
+      const failed = die <= 5;
+      if (failed) failures++;
+      results.push({ die, failed });
+    }
+
+    // Update actor hunger if provided
+    let newHunger = null;
+    let hungerWarning = false;
+    if (actor) {
+      const currentHunger = actor.system.hunger;
+      newHunger = Math.min(5, currentHunger + failures);
+      if (failures > 0) {
+        await actor.update({ "system.hunger": newHunger });
+      }
+      hungerWarning = newHunger >= 5;
+    }
+
+    // Build chat message
+    const diceHtml = results.map(r =>
+      `<span class="vtm-die ${r.failed ? "rouse-fail" : "rouse-pass"}">${r.die}</span>`
+    ).join(" ");
+
+    const outcomeText = failures === 0
+      ? "No Hunger gain"
+      : `Hunger +${failures}${newHunger !== null ? ` (now ${newHunger})` : ""}`;
+
+    const content = `
+      <div class="vtm-roll vtm-rouse-check">
+        <div class="vtm-roll-label">${label}${count > 1 ? ` (x${count})` : ""}</div>
+        <div class="vtm-roll-dice">${diceHtml}</div>
+        <div class="vtm-roll-result ${failures > 0 ? "rouse-failed" : "rouse-passed"}">
+          ${outcomeText}
+        </div>
+        ${hungerWarning ? '<div class="vtm-roll-warning bestial">Hunger is at maximum! The Beast demands to feed!</div>' : ""}
+      </div>
+    `;
+
+    await ChatMessage.create({
+      speaker: actor ? ChatMessage.getSpeaker({ actor }) : ChatMessage.getSpeaker(),
+      flavor: label,
+      content,
+    });
+
+    return { results, failures, hungerGain: failures, newHunger };
+  }
 }

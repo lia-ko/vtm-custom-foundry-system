@@ -1,0 +1,16 @@
+{
+  "_id": "e031ee591c8c6640",
+  "name": "Level 1 Rituals",
+  "pages": [
+    {
+      "_id": "1a417eb739dafce0",
+      "name": "Level 1 Rituals",
+      "type": "text",
+      "text": {
+        "content": "<h2>Blood Sorcery Rituals — Level 1</h2>\n\n    <h3>Blood Walk</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 1 hour</p>\n    <p><strong>Ingredients:</strong> A taste of the subject's blood</p>\n    <p>By tasting the blood of another Kindred, the caster can determine their generation, clan, sire, and any blood bonds. Provides a vision of the subject's lineage.</p>\n    <hr>\n  \n\n    <h3>Clinging of the Insect</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 10 minutes</p>\n    <p><strong>Ingredients:</strong> A living spider, consumed</p>\n    <p>Allows the caster to climb and cling to walls and ceilings like a spider for the remainder of the night.</p>\n    <hr>\n  \n\n    <h3>Craft Bloodstone</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 3 hours</p>\n    <p><strong>Ingredients:</strong> A small smooth pebble and a point of vitae</p>\n    <p>Enchants a small pebble to glow when within a certain distance of Kindred vitae. Useful for detecting vampires or hidden blood stores.</p>\n    <hr>\n  \n\n    <h3>Wake with Evening's Freshness</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 15 minutes</p>\n    <p><strong>Ingredients:</strong> The caster's vitae spread around the resting place</p>\n    <p>Allows the caster to awaken at any sign of danger during the day without the need for a Humanity roll, rising one hour before sunset if undisturbed.</p>\n    <hr>\n  \n\n    <h3>Communicate with Kindred Sire</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 30 minutes</p>\n    <p><strong>Ingredients:</strong> An object once belonging to the sire</p>\n    <p>Opens a telepathic channel between the caster and their sire, allowing communication over any distance for a single night. Both parties must be willing.</p>\n    <hr>\n  \n\n    <h3>Defence of the Sacred Haven</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 1 hour</p>\n    <p><strong>Ingredients:</strong> Vitae painted along all window frames and door thresholds</p>\n    <p>Wards a single room against sunlight. Any windows or openings are mystically sealed against daylight, though the room becomes pitch black. Lasts until the next sunset.</p>\n    <hr>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

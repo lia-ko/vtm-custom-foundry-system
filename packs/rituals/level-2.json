@@ -1,0 +1,16 @@
+{
+  "_id": "409684fbacfce1a6",
+  "name": "Level 2 Rituals",
+  "pages": [
+    {
+      "_id": "4e63fb00bd49dc7d",
+      "name": "Level 2 Rituals",
+      "type": "text",
+      "text": {
+        "content": "<h2>Blood Sorcery Rituals — Level 2</h2>\n\n    <h3>Warding Circle vs Ghouls</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 30 minutes</p>\n    <p><strong>Ingredients:</strong> Vitae traced in a circle, salt</p>\n    <p>Creates an invisible circle on the ground that no ghoul can willingly cross. Ghouls who attempt to cross suffer aggravated damage. Lasts until the next sunrise.</p>\n    <hr>\n  \n\n    <h3>Deflection of Wooden Doom</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 1 hour</p>\n    <p><strong>Ingredients:</strong> Wood shavings dissolved in vitae, consumed</p>\n    <p>Enchants the caster's body so that the first wooden stake that strikes them during the night shatters harmlessly on contact. Single use per casting.</p>\n    <hr>\n  \n\n    <h3>Extinguish</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> Instant (1 turn ritual action)</p>\n    <p><strong>Ingredients:</strong> A vial of water mixed with ash</p>\n    <p>Instantly douses all mundane fires within a certain radius. Supernatural fires resist but are reduced. Useful against frenzy triggers.</p>\n    <hr>\n  \n\n    <h3>Eyes of Babel</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 30 minutes</p>\n    <p><strong>Ingredients:</strong> A page from a foreign language text, burned and mixed with vitae</p>\n    <p>Allows the caster to understand and speak any human language for the remainder of the night. Does not grant literacy.</p>\n    <hr>\n  \n\n    <h3>Illuminate the Trail of Prey</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 15 minutes</p>\n    <p><strong>Ingredients:</strong> A personal possession of the target</p>\n    <p>By casting this ritual over an object belonging to a person, the caster can see ghostly footprints tracing the owner's recent path. Tracks last until sunrise.</p>\n    <hr>\n  \n\n    <h3>Truth of Blood</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery vs Composure + Subterfuge | <strong>Time:</strong> 5 minutes</p>\n    <p><strong>Ingredients:</strong> A drop of vitae applied to the subject's lips</p>\n    <p>By anointing a subject's lips with vitae, the caster compels them to speak only the truth for the next few minutes. Supernaturals may resist.</p>\n    <hr>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

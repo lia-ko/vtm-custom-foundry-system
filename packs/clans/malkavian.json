@@ -1,0 +1,16 @@
+{
+  "_id": "730a27f00ac6fc1b",
+  "name": "Malkavian",
+  "pages": [
+    {
+      "_id": "6ea07028719172a8",
+      "name": "Malkavian",
+      "type": "text",
+      "text": {
+        "content": "\n    <h2>Malkavian</h2>\n    <p><em>The Lunatics</em></p>\n    <p><strong>In-Clan Disciplines:</strong> Auspex, Dominate, Obfuscate</p>\n    <h3>Clan Bane</h3>\n    <p>Fractured Perspective. Each Malkavian suffers from at least one mental disorder that cannot be cured or treated — it is a fundamental part of their vampiric nature. This is selected at character creation (paranoia, dissociation, synesthesia, compulsive behavior, hallucinations, etc.). The condition worsens during stress: in high-pressure situations, suffer a Bane Severity penalty to one category of dice pools (specified at character creation). The condition is always present; it simply becomes debilitating under pressure.</p>\n    <h3>Compulsion</h3>\n    <p>Delusion. The vampire's grip on reality fractures. They experience a vivid hallucination, intrusive thought, or false belief that feels utterly real. The specific delusion is tied to their Bane disorder. They must act on the delusion as if it were real — warning others of invisible threats, responding to voices, or insisting on a falsehood. Until the delusion passes (usually one scene), they suffer a 2-dice penalty to Perception and related rolls.</p>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

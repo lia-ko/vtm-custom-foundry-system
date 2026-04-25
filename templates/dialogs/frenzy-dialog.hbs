@@ -1,0 +1,26 @@
+<form>
+  <div class="form-group">
+    <label>Frenzy Type</label>
+    <select name="fType">
+      <option value="fury">Fury — rage, provocation</option>
+      <option value="hunger">Hunger — scent of blood</option>
+      <option value="rotschreck">R&ouml;tschreck — fire, sunlight</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Pool (WP {{willpower}} + Humanity/3 {{humanityThird}})</label>
+    <input type="number" name="pool" value="{{defaultPool}}" min="1" max="20" />
+  </div>
+  <div class="form-group">
+    <label>Difficulty (successes needed)</label>
+    <select name="diff">
+      <option value="2">2 — mild provocation</option>
+      <option value="3" selected>3 — standard</option>
+      <option value="4">4 — severe</option>
+      <option value="5">5 — extreme</option>
+    </select>
+  </div>
+  {{#if hungerWarning}}
+    <p style="color:#ff2222;font-size:11px">Warning: Hunger is {{hungerLevel}} — the Beast is starving</p>
+  {{/if}}
+</form>

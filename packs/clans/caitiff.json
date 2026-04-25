@@ -1,0 +1,16 @@
+{
+  "_id": "09787a6d12462721",
+  "name": "Caitiff",
+  "pages": [
+    {
+      "_id": "acd905312537f8d5",
+      "name": "Caitiff",
+      "type": "text",
+      "text": {
+        "content": "\n    <h2>Caitiff</h2>\n    <p><em>The Clanless</em></p>\n    <p><em>No in-clan disciplines.</em></p>\n    <h3>Clan Bane</h3>\n    <p>Clanless. Caitiff have no in-clan Disciplines — all Disciplines cost the out-of-clan XP rate. They are also treated with suspicion and contempt by Kindred society. Caitiff cannot claim the protection of a clan and are often the first to be sacrificed in political conflicts. On the positive side, they have no clan compulsion and can learn any Discipline without restriction.</p>\n    <h3>Compulsion</h3>\n    <p>None. Caitiff do not have a clan compulsion. However, they lack the social support of a clan and may develop personal compulsions at the Storyteller's discretion.</p>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "_id": "ee7c1bcde34ff887",
+  "name": "Ventrue",
+  "pages": [
+    {
+      "_id": "be3e1bbe59c41e9a",
+      "name": "Ventrue",
+      "type": "text",
+      "text": {
+        "content": "\n    <h2>Ventrue</h2>\n    <p><em>The Blue Bloods</em></p>\n    <p><strong>In-Clan Disciplines:</strong> Dominate, Fortitude, Presence</p>\n    <h3>Clan Bane</h3>\n    <p>Rarefied Tastes. Each Ventrue can only feed from a specific type of mortal — chosen at character creation (blue-collar workers, redheads, virgins, clergy, the frightened, criminals, CEOs, etc.). Blood from any other source tastes foul and provides no nourishment — the Ventrue's Hunger does not decrease. If desperate enough to feed on the wrong type, the Ventrue must roll Resolve + Awareness (Difficulty = 2 + Bane Severity) or vomit the blood immediately.</p>\n    <h3>Compulsion</h3>\n    <p>Arrogance. The vampire must assert their dominance and superiority. They cannot accept help, take orders, or admit fault. They must be in charge, be right, and be acknowledged as such. Asking for assistance, apologizing, or deferring to another is impossible. Until they have forced someone to acknowledge their authority or superiority, they suffer a 2-dice penalty to all rolls.</p>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

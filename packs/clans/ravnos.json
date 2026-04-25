@@ -1,0 +1,16 @@
+{
+  "_id": "aeb36164a83b58f1",
+  "name": "Ravnos",
+  "pages": [
+    {
+      "_id": "1f098edd7751d851",
+      "name": "Ravnos",
+      "type": "text",
+      "text": {
+        "content": "\n    <h2>Ravnos</h2>\n    <p><em>The Daredevils</em></p>\n    <p><strong>In-Clan Disciplines:</strong> Animalism, Obfuscate, Presence</p>\n    <h3>Clan Bane</h3>\n    <p>Doomed. The sun's curse burns the Ravnos more fiercely than other Kindred. When exposed to sunlight, they take additional Aggravated damage equal to their Bane Severity. Additionally, when they would enter torpor, they must make a Humanity roll (Difficulty 2 + Bane Severity) — failure means Final Death as their body crumbles to ash. The Ravnos exist on borrowed time.</p>\n    <h3>Compulsion</h3>\n    <p>Tempting Fate. The vampire must take a dramatic, unnecessary risk. They must choose the most dangerous option available — pick the fight they might lose, take the shortcut through hostile territory, make the bet they can't afford. Playing it safe is impossible. Until they've genuinely risked something meaningful (their safety, a relationship, resources), they suffer a 2-dice penalty to all rolls.</p>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+<div class="tab" data-group="primary" data-tab="bio">
+  <div class="bio-grid">
+    <div class="bio-field">
+      <label>{{localize "VTM.Clan"}}</label>
+      <select name="system.clan" class="bio-value clan-select">
+        <option value="">-- Select Clan --</option>
+        {{#each clanOptions}}
+          <option value="{{this.name}}" {{#if this.selected}}selected{{/if}}>{{this.name}} — {{this.nickname}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="bio-field">
+      <label>{{localize "VTM.Generation"}}</label>
+      <input type="text" name="system.generation" value="{{system.generation}}" class="bio-value" />
+    </div>
+    <div class="bio-field">
+      <label>{{localize "VTM.Sire"}}</label>
+      <input type="text" name="system.sire" value="{{system.sire}}" class="bio-value" />
+    </div>
+    <div class="bio-field">
+      <label>{{localize "VTM.BloodPotency"}}</label>
+      <input type="number" name="system.bloodPotency" value="{{system.bloodPotency}}" class="bio-value" min="0" max="10" />
+    </div>
+    <div class="bio-field">
+      <label>{{localize "VTM.Nature"}}</label>
+      <input type="text" name="system.nature" value="{{system.nature}}" class="bio-value" />
+    </div>
+    <div class="bio-field">
+      <label>{{localize "VTM.Demeanor"}}</label>
+      <input type="text" name="system.demeanor" value="{{system.demeanor}}" class="bio-value" />
+    </div>
+    <div class="bio-field">
+      <label>{{localize "VTM.Concept"}}</label>
+      <input type="text" name="system.concept" value="{{system.concept}}" class="bio-value" />
+    </div>
+    <div class="bio-field">
+      <label>Apparent Age</label>
+      <input type="number" name="system.apparentAge" value="{{system.apparentAge}}" class="bio-value" min="0" />
+    </div>
+    <div class="bio-field">
+      <label>True Age</label>
+      <input type="number" name="system.trueAge" value="{{system.trueAge}}" class="bio-value" min="0" />
+    </div>
+    <div class="bio-field">
+      <label>Haven</label>
+      <input type="text" name="system.haven" value="{{system.haven}}" class="bio-value" />
+    </div>
+  </div>
+
+  {{!-- Clan Bane & Compulsion --}}
+  {{#if clanInfo}}
+    <div class="clan-traits">
+      <div class="clan-trait">
+        <div class="clan-trait-header">
+          <span class="clan-trait-icon">&#9760;</span>
+          <span class="clan-trait-label">Clan Bane</span>
+        </div>
+        <div class="clan-trait-text">{{clanInfo.bane}}</div>
+      </div>
+      <div class="clan-trait">
+        <div class="clan-trait-header">
+          <span class="clan-trait-icon">&#9888;</span>
+          <span class="clan-trait-label">Compulsion</span>
+        </div>
+        <div class="clan-trait-text">{{clanInfo.compulsion}}</div>
+      </div>
+      {{#if clanInfo.disciplines.length}}
+        <div class="clan-trait">
+          <div class="clan-trait-header">
+            <span class="clan-trait-icon">&#9670;</span>
+            <span class="clan-trait-label">In-Clan Disciplines</span>
+          </div>
+          <div class="clan-trait-text clan-disc-list">
+            {{#each clanInfo.disciplines}}
+              <span class="clan-disc-tag">{{this}}</span>
+            {{/each}}
+          </div>
+        </div>
+      {{/if}}
+    </div>
+  {{/if}}
+
+  <div class="bio-text">
+    {{editor system.biography target="system.biography" button=true editable=editable}}
+  </div>
+</div>

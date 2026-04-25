@@ -1,0 +1,16 @@
+{
+  "_id": "cd587c22946c6b43",
+  "name": "Level 3 Rituals",
+  "pages": [
+    {
+      "_id": "dd27d2b22571a09d",
+      "name": "Level 3 Rituals",
+      "type": "text",
+      "text": {
+        "content": "<h2>Blood Sorcery Rituals — Level 3</h2>\n\n    <h3>Warding Circle vs Kindred</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 1 hour</p>\n    <p><strong>Ingredients:</strong> Vitae of the caster traced in a circle, bone dust</p>\n    <p>Creates an invisible circle that no vampire can willingly cross. Kindred who force their way through suffer aggravated damage. Lasts until sunrise.</p>\n    <hr>\n  \n\n    <h3>Firewalker</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 30 minutes</p>\n    <p><strong>Ingredients:</strong> A candle flame extinguished with vitae</p>\n    <p>Grants the caster resistance to fire for the remainder of the night. Fire damage is reduced and Rotschreck difficulties are lowered.</p>\n    <hr>\n  \n\n    <h3>Incorporeal Passage</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 10 minutes</p>\n    <p><strong>Ingredients:</strong> A shard of mirror smeared with vitae</p>\n    <p>Allows the caster to pass through a single solid barrier — wall, door, or floor — as though it were not there. One passage per casting.</p>\n    <hr>\n  \n\n    <h3>Pavis of Foul Presence</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 20 minutes</p>\n    <p><strong>Ingredients:</strong> Vitae painted on the caster's forehead (invisible to mortals)</p>\n    <p>Wards the caster against Presence powers. Any Presence attempt directed at the caster is reflected back upon the user for the remainder of the scene.</p>\n    <hr>\n  \n\n    <h3>Shaft of Belated Quiescence</h3>\n    <p><strong>Cost:</strong> 1 Rouse | <strong>Pool:</strong> Int + Blood Sorcery | <strong>Time:</strong> 3 nights preparation + 10 minutes casting</p>\n    <p><strong>Ingredients:</strong> A wooden stake soaked in vitae for three nights</p>\n    <p>Enchants a wooden stake so that it splinters inside the target on impact, releasing a paralytic blood magic effect. Even if the heart is missed, the target is immobilized for a time.</p>\n    <hr>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

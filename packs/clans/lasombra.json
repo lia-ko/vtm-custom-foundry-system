@@ -1,0 +1,16 @@
+{
+  "_id": "4d49b81d05ef8560",
+  "name": "Lasombra",
+  "pages": [
+    {
+      "_id": "a39573f93ffe9421",
+      "name": "Lasombra",
+      "type": "text",
+      "text": {
+        "content": "\n    <h2>Lasombra</h2>\n    <p><em>The Magisters</em></p>\n    <p><strong>In-Clan Disciplines:</strong> Dominate, Oblivion, Potence</p>\n    <h3>Clan Bane</h3>\n    <p>Distorted Reflection. The Lasombra's image is distorted in reflections and recordings. Mirrors show a warped, monstrous visage; photographs blur; video footage glitches and distorts. This makes it impossible to use technology that relies on facial recognition, video calls appear corrupted, and security camera footage of them is obviously supernatural. Subtract Bane Severity from any Technology rolls involving their own image.</p>\n    <h3>Compulsion</h3>\n    <p>Ruthlessness. The vampire must prove their superiority by any means necessary. They cannot accept a compromise, show mercy, or take the gracious option. They must win — and be seen to win. Surrender, retreat, and charity are impossible. Until they have demonstrably triumphed over someone in the scene, they suffer a 2-dice penalty to all rolls.</p>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

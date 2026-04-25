@@ -1,0 +1,16 @@
+{
+  "_id": "0b4a0ce4aa76e5a1",
+  "name": "Toreador",
+  "pages": [
+    {
+      "_id": "764ea8219e61c517",
+      "name": "Toreador",
+      "type": "text",
+      "text": {
+        "content": "\n    <h2>Toreador</h2>\n    <p><em>The Degenerates</em></p>\n    <p><strong>In-Clan Disciplines:</strong> Auspex, Celerity, Presence</p>\n    <h3>Clan Bane</h3>\n    <p>Aesthetic Fixation. When a Toreador encounters something truly beautiful (or truly hideous) — art, a person, a sunset, an act of violence — they must roll Composure + Resolve (Difficulty = 2 + Bane Severity) or become transfixed. While fixated, they can take no actions other than contemplating the subject. The fixation lasts until the stimulus is removed, they are attacked, or the scene ends. This can trigger at catastrophically inconvenient moments.</p>\n    <h3>Compulsion</h3>\n    <p>Obsession. The vampire becomes fixated on a specific person, object, or artistic vision in the scene. They must possess it, protect it, or perfect it — to the exclusion of all else. They will abandon other goals, ignore threats, and alienate allies in pursuit of the object of their obsession. Until they have secured their obsession or it is destroyed/removed, they suffer a 2-dice penalty to all rolls not related to the obsession.</p>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

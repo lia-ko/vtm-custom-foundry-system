@@ -1,0 +1,16 @@
+{
+  "_id": "40d5c8fa58184d2d",
+  "name": "Thin-Blood",
+  "pages": [
+    {
+      "_id": "f0b0b088240b6479",
+      "name": "Thin-Blood",
+      "type": "text",
+      "text": {
+        "content": "\n    <h2>Thin-Blood</h2>\n    <p><em>The Duskborn</em></p>\n    <p><strong>In-Clan Disciplines:</strong> Thin-Blood Alchemy</p>\n    <h3>Clan Bane</h3>\n    <p>Thin Vitae. Thin-bloods are barely vampires. They can eat food, walk in dim sunlight for short periods, and may even have a heartbeat — but their blood is weak. They cannot Blood Bond other Kindred, cannot create childer reliably, and their vitae is insufficient to create ghouls. They begin with Blood Potency 0. Many Kindred consider them abominations to be destroyed on sight.</p>\n    <h3>Compulsion</h3>\n    <p>None. Thin-bloods are too far removed from Caine to have a clan compulsion. However, their precarious existence means they face unique social and survival pressures.</p>\n  ",
+        "format": 1
+      },
+      "sort": 0
+    }
+  ]
+}

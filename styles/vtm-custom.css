@@ -276,6 +276,27 @@
   background: var(--vtm-bg-lighter);
 }
 
+.vtm-custom .attr-row.rollable {
+  cursor: pointer;
+}
+
+.vtm-custom .attr-row .roll-icon {
+  font-size: 10px;
+  color: var(--vtm-border);
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+  transition: color 0.15s;
+}
+
+.vtm-custom .attr-row.rollable:hover .roll-icon {
+  color: var(--vtm-accent-light);
+}
+
+.vtm-custom .attr-row.rollable:hover .attr-label {
+  color: var(--vtm-text-bright);
+}
+
 .vtm-custom .attr-row .attr-label {
   font-size: 11px;
   text-transform: capitalize;
@@ -908,6 +929,62 @@
   min-height: 100px;
 }
 
+/* --- Clan Traits (Bane, Compulsion, In-Clan Disciplines) --- */
+.vtm-custom .clan-traits {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.vtm-custom .clan-trait {
+  background: var(--vtm-bg-light);
+  border: 1px solid var(--vtm-border);
+  border-radius: 4px;
+  padding: 7px 10px;
+}
+
+.vtm-custom .clan-trait-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 3px;
+}
+
+.vtm-custom .clan-trait-icon {
+  font-size: 11px;
+  color: var(--vtm-accent-light);
+}
+
+.vtm-custom .clan-trait-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--vtm-gold-dim);
+  font-weight: bold;
+}
+
+.vtm-custom .clan-trait-text {
+  font-size: 10px;
+  color: var(--vtm-text);
+  line-height: 1.5;
+}
+
+.vtm-custom .clan-disc-list {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.vtm-custom .clan-disc-tag {
+  font-size: 9px;
+  color: var(--vtm-accent-light);
+  background: rgba(139, 26, 26, 0.12);
+  border: 1px solid rgba(179, 48, 48, 0.3);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
 /* --- Favorites (pinned powers on attributes tab) --- */
 .vtm-custom .favorites-header {
   display: flex;
@@ -998,6 +1075,85 @@
 .vtm-custom .fav-card.type-ri {
   border-left: 2px solid var(--vtm-gold);
   border-radius: 0 4px 4px 0;
+}
+
+/* --- Merits & Flaws --- */
+.vtm-custom .mf-entry {
+  background: var(--vtm-bg-light);
+  border-radius: 3px;
+  margin-bottom: 3px;
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+
+.vtm-custom .mf-entry:hover {
+  border-color: var(--vtm-border);
+}
+
+.vtm-custom .mf-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 7px;
+}
+
+.vtm-custom .mf-cat-tag {
+  font-size: 7px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--vtm-gold);
+  background: rgba(196, 163, 90, 0.1);
+  border: 1px solid rgba(196, 163, 90, 0.3);
+  padding: 1px 5px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.vtm-custom .mf-cat-tag.flaw-tag {
+  color: var(--vtm-accent-light);
+  background: rgba(139, 26, 26, 0.12);
+  border-color: rgba(179, 48, 48, 0.3);
+}
+
+.vtm-custom .mf-name {
+  font-size: 11px;
+  color: var(--vtm-text);
+  flex: 1;
+  cursor: pointer;
+}
+
+.vtm-custom .mf-name:hover {
+  color: var(--vtm-text-bright);
+}
+
+.vtm-custom .mf-detail {
+  padding: 4px 10px 8px 20px;
+  border-top: 1px solid var(--vtm-border);
+}
+
+.vtm-custom .mf-detail-desc {
+  font-size: 10px;
+  color: var(--vtm-text);
+  line-height: 1.5;
+}
+
+.vtm-custom .advantage-row {
+  padding-right: 4px;
+}
+
+.vtm-custom .advantage-row .item-delete {
+  color: var(--vtm-text-dim);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 2px 4px;
+  border: none;
+  background: none;
+  font-family: inherit;
+  margin-left: 4px;
+}
+
+.vtm-custom .advantage-row .item-delete:hover {
+  color: var(--vtm-accent-light);
 }
 
 /* --- Empty / Placeholder States --- */
@@ -1096,6 +1252,21 @@
 .vtm-roll-result.botch { color: #8b0000; }
 .vtm-roll-result.bestial-failure { color: #ff0000; text-shadow: 0 0 4px rgba(255, 0, 0, 0.3); }
 .vtm-roll-result.messy-critical { color: #8b0000; text-shadow: 0 0 4px rgba(139, 0, 0, 0.3); }
+
+.vtm-die.rouse-pass {
+  background: #2d5a2d;
+  color: #fff;
+  border-color: #1a3a1a;
+}
+
+.vtm-die.rouse-fail {
+  background: #8b0000;
+  color: #fff;
+  border-color: #5a0000;
+}
+
+.vtm-roll-result.rouse-passed { color: #4a8a4a; }
+.vtm-roll-result.rouse-failed { color: #ff2222; }
 
 /* --- Scrollbar --- */
 .vtm-custom .sheet-body::-webkit-scrollbar {
@@ -1286,6 +1457,36 @@
   background: #6a1a1a;
   border-color: #cc3333;
   color: var(--vtm-text-bright);
+}
+
+/* --- Blood Potency Effects --- */
+.vtm-custom .bp-effects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px 0 0;
+  border-top: 1px solid rgba(68, 68, 80, 0.3);
+  margin-top: 4px;
+}
+
+.vtm-custom .bp-tag {
+  font-size: 8px;
+  color: var(--vtm-text-dim);
+  background: var(--vtm-surface);
+  border: 1px solid var(--vtm-border);
+  padding: 1px 6px;
+  border-radius: 8px;
+  cursor: help;
+}
+
+.vtm-custom .bp-tag.bp-feeding {
+  color: var(--vtm-accent-light);
+  border-color: rgba(179, 48, 48, 0.3);
+  background: rgba(139, 26, 26, 0.1);
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .vtm-custom .action-separator {
