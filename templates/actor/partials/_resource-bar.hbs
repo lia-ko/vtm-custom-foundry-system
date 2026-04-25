@@ -39,13 +39,17 @@
       <div class="tracker-value">{{system.hunger}} / 5</div>
     </div>
 
-    {{!-- Humanity --}}
+    {{!-- Humanity + Stains --}}
     <div class="tracker-group">
       <label>{{localize "VTM.Humanity"}}</label>
       <div class="tracker-row">
         {{#each humanityDots}}
-          <span class="dot {{#if this}}filled{{/if}}" data-tracker="humanity" data-index="{{@index}}"></span>
+          <span class="dot {{this}}" data-tracker="humanity" data-index="{{@index}}"></span>
         {{/each}}
+      </div>
+      <div class="tracker-value">
+        {{system.humanity}} Humanity
+        {{#if system.stains}} / {{system.stains}} Stains{{/if}}
       </div>
     </div>
 
@@ -82,6 +86,9 @@
     <button type="button" class="action-btn hunt-btn">&#9788; Hunt</button>
     <div class="action-separator"></div>
     <button type="button" class="action-btn frenzy-btn frenzy-check">&#9760; Frenzy check</button>
+    <div class="action-separator"></div>
+    <button type="button" class="action-btn add-stain">&#10006; Stain</button>
+    <button type="button" class="action-btn degen-roll">&#9764; Remorse</button>
   </div>
 
   {{!-- Current resonance --}}

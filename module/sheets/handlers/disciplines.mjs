@@ -1,8 +1,7 @@
-import { safePrompt } from "../../helpers/safe-dialog.mjs";
-/** Discipline, ritual, and clan handlers. */
+/** Discipline, power rolling, and clan handlers. */
 
+import { safePrompt } from "../../helpers/safe-dialog.mjs";
 import { DISCIPLINE_DB, getAvailableDisciplines, getAllPowers } from "../../data/disciplines.mjs";
-import { RITUAL_DB } from "../../data/rituals.mjs";
 import { getClan } from "../../data/clans.mjs";
 
 const DIALOG_PATH = "systems/vtm-custom/templates/dialogs";
@@ -13,9 +12,8 @@ export function registerListeners(html, sheet) {
   html.on("click", ".add-discipline", sheet._onAddDiscipline.bind(sheet));
   html.on("click", ".delete-discipline", sheet._onDeleteDiscipline.bind(sheet));
   html.on("click", ".power-pin", sheet._onTogglePowerPin.bind(sheet));
-  html.on("click", ".add-ritual", sheet._onAddRitual.bind(sheet));
-  html.on("click", ".add-custom-ritual", sheet._onAddCustomRitual.bind(sheet));
-  html.on("click", ".delete-ritual", sheet._onDeleteItem.bind(sheet, "rituals"));
+  html.on("click", ".power-use", sheet._onPowerRoll.bind(sheet));
+  html.on("click", ".power-activate", sheet._onPowerActivate.bind(sheet));
   html.on("change", ".clan-select", sheet._onClanChange.bind(sheet));
 }
 
@@ -102,49 +100,68 @@ export async function _onTogglePowerPin(event) {
   await this.actor.update({ "system.disciplines": discs });
 }
 
-export async function _onAddRitual(event) {
+export async function _onPowerRoll(event) {
   event.preventDefault();
-  const owned = this.actor.system.rituals.map(r => r.name);
-  const available = RITUAL_DB.filter(r => !owned.includes(r.name));
+  event.stopPropagation();
+  const discIdx = parseInt(event.currentTarget.dataset.disc);
+  const powerIdx = parseInt(event.currentTarget.dataset.power);
+  const disc = this.actor.system.disciplines[discIdx];
+  const power = disc?.powers[powerIdx];
+  if (!power) return;
 
-  if (available.length === 0) { ui.notifications.info("All rituals already learned."); return; }
+  const rouseMatch = power.cost.match(/(\d+)\s*Rouse/i);
+  const rouseCost = rouseMatch ? parseInt(rouseMatch[1]) : 0;
 
-  const content = await renderTemplate(`${DIALOG_PATH}/add-from-list.hbs`, {
-    label: "Ritual",
-    options: available.map(r => ({ value: r.name, label: `Lvl ${r.level} — ${r.name}` })),
-    showRating: false,
+  const content = await renderTemplate(`${DIALOG_PATH}/roll-dialog.hbs`, this._buildRollOptions());
+  const result = await safePrompt({
+    title: `${disc.name}: ${power.name}`,
+    content,
+    callback: html => ({
+      attr: html.find('[name="attr"]').val(),
+      skill: html.find('[name="skill"]').val(),
+      mod: parseInt(html.find('[name="mod"]').val()) || 0,
+      diff: parseInt(html.find('[name="diff"]').val()) || 1,
+      hunger: parseInt(html.find('[name="hunger"]').val()) || 0,
+    }),
   });
-
-  const result = await safePrompt({ title: "Add Ritual", content, callback: html => html.find('[name="selection"]').val() });
   if (!result) return;
 
-  const dbEntry = available.find(r => r.name === result);
-  if (!dbEntry) return;
+  const { VTMDiceRoller } = await import("../../dice/VTMDiceRoller.mjs");
 
-  const rituals = foundry.utils.deepClone(this.actor.system.rituals);
-  rituals.push({ ...dbEntry, custom: false });
-  rituals.sort((a, b) => a.level - b.level);
-  await this.actor.update({ "system.rituals": rituals });
+  if (rouseCost > 0) {
+    await VTMDiceRoller.rouseCheck({ label: `Rouse: ${power.name}`, count: rouseCost, actor: this.actor });
+  }
+
+  const system = this.actor.system;
+  const pool = Math.max(1, (system.attributes[result.attr] ?? 0) + this._getSkillValue(system, result.skill) + result.mod);
+  await VTMDiceRoller.v5Roll({
+    pool, hunger: result.hunger, difficulty: result.diff,
+    label: `${power.name} (${this._formatLabel(result.attr)} + ${this._formatLabel(result.skill)})`,
+    actor: this.actor,
+  });
 }
 
-export async function _onAddCustomRitual(event) {
+export async function _onPowerActivate(event) {
   event.preventDefault();
-  const content = await renderTemplate(`${DIALOG_PATH}/custom-ritual.hbs`);
-  const result = await safePrompt({
-    title: "Add Custom Ritual",
-    content,
-    callback: html => {
-      const name = html.find('[name="name"]').val()?.trim();
-      if (!name) return null;
-      return { name, level: parseInt(html.find('[name="level"]').val()), description: html.find('[name="desc"]').val() || "", cost: html.find('[name="cost"]').val() || "1 Rouse", pool: html.find('[name="pool"]').val() || "Int + Blood Sorcery", ingredients: html.find('[name="ingredients"]').val() || "", time: html.find('[name="time"]').val() || "", custom: true };
-    },
-  });
-  if (!result) return;
+  event.stopPropagation();
+  const discIdx = parseInt(event.currentTarget.dataset.disc);
+  const powerIdx = parseInt(event.currentTarget.dataset.power);
+  const disc = this.actor.system.disciplines[discIdx];
+  const power = disc?.powers[powerIdx];
+  if (!power) return;
 
-  const rituals = foundry.utils.deepClone(this.actor.system.rituals);
-  rituals.push(result);
-  rituals.sort((a, b) => a.level - b.level);
-  await this.actor.update({ "system.rituals": rituals });
+  const rouseMatch = power.cost.match(/(\d+)\s*Rouse/i);
+  const rouseCost = rouseMatch ? parseInt(rouseMatch[1]) : 0;
+
+  if (rouseCost > 0) {
+    const { VTMDiceRoller } = await import("../../dice/VTMDiceRoller.mjs");
+    await VTMDiceRoller.rouseCheck({ label: `Rouse: ${power.name}`, count: rouseCost, actor: this.actor });
+  }
+
+  await ChatMessage.create({
+    speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+    content: `<div class="vtm-roll"><div class="vtm-roll-label">${this.actor.name} activates ${power.name}</div><div class="vtm-roll-info">${disc.name} — ${power.cost}</div></div>`,
+  });
 }
 
 export async function _onClanChange(event) {

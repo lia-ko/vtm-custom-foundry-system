@@ -97,3 +97,12 @@
   padding: 2px 8px;
   border-radius: 10px;
 }
+
+/* --- Touchstones --- */
+.vtm-custom .touchstone-conviction {
+  font-size: 9px;
+  color: var(--vtm-gold);
+  font-style: italic;
+  margin-left: auto;
+  margin-right: 6px;
+}

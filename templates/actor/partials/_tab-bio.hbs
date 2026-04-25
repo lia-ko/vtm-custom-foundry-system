@@ -80,7 +80,34 @@
     </div>
   {{/if}}
 
-  <div class="bio-text">
+  {{!-- Touchstones --}}
+  <div class="section-header" style="margin-top: 14px">
+    <h3>Touchstones &amp; Convictions</h3>
+    <div class="header-buttons">
+      <button type="button" class="btn btn-red add-touchstone">+ Add</button>
+    </div>
+  </div>
+
+  {{#each system.touchstones}}
+    <div class="mf-entry">
+      <div class="mf-row">
+        <span class="mf-name expandable-toggle" data-expand-group="touchstones" data-expand-id="{{@index}}">&#9658; {{this.name}}</span>
+        {{#if this.conviction}}<span class="touchstone-conviction">{{this.conviction}}</span>{{/if}}
+        <button type="button" class="item-delete delete-touchstone" data-index="{{@index}}">&#10005;</button>
+      </div>
+      {{#if this.description}}
+        <div class="mf-detail expandable-detail" data-expand-group="touchstones" data-expand-id="{{@index}}" style="display:none">
+          <div class="mf-detail-desc">{{this.description}}</div>
+        </div>
+      {{/if}}
+    </div>
+  {{/each}}
+
+  {{#unless system.touchstones.length}}
+    <p class="empty-state">No touchstones. Touchstones anchor your Humanity — without them, the Beast grows stronger.</p>
+  {{/unless}}
+
+  <div class="bio-text" style="margin-top: 14px">
     {{editor system.biography target="system.biography" button=true editable=editable}}
   </div>
 </div>

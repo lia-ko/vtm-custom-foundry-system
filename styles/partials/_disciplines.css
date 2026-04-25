@@ -158,6 +158,34 @@
   pointer-events: none;
 }
 
+.vtm-custom .power-use {
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.vtm-custom .power-use:hover {
+  color: var(--vtm-text-bright);
+  background: rgba(179, 48, 48, 0.2);
+  border-color: var(--vtm-accent-light);
+}
+
+.vtm-custom .power-activate {
+  background: none;
+  border: 1px solid var(--vtm-border);
+  color: var(--vtm-text-dim);
+  font-size: 8px;
+  padding: 1px 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+
+.vtm-custom .power-activate:hover {
+  color: var(--vtm-accent-light);
+  border-color: var(--vtm-accent-light);
+}
+
 .vtm-custom .power-toggle {
   cursor: pointer;
 }

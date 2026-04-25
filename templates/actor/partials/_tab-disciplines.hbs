@@ -31,7 +31,8 @@
                   {{#unless (gt this.level ../this.value)}}
                     <span class="power-cost">{{this.cost}}</span>
                     {{#if this.amalgam}}<span class="power-amalgam">{{this.amalgam}}</span>{{/if}}
-                    {{#unless (eq this.pool "--")}}<span class="power-pool">{{this.pool}}</span>{{/unless}}
+                    {{#unless (eq this.pool "--")}}<span class="power-pool power-use" data-disc="{{../@index}}" data-power="{{@index}}" title="Roll {{this.name}}">{{this.pool}}</span>{{/unless}}
+                    {{#if (eq this.pool "--")}}<button type="button" class="power-activate" data-disc="{{../@index}}" data-power="{{@index}}" title="Activate {{this.name}}">&#9654;</button>{{/if}}
                     <span class="power-pin {{#if this.pin}}active{{/if}}" data-disc="{{../@index}}" data-power="{{@index}}">{{#if this.pin}}&#9733;{{else}}&#9734;{{/if}}</span>
                   {{/unless}}
                 </div>
@@ -91,5 +92,41 @@
 
   {{#unless system.rituals.length}}
     <p class="empty-state">No rituals learned.</p>
+  {{/unless}}
+
+  <hr class="divider">
+
+  <div class="section-header">
+    <h3>Thin-Blood Alchemy</h3>
+    <div class="header-buttons">
+      <button type="button" class="btn add-formula">+ Add Formula</button>
+      <button type="button" class="btn add-custom-formula">+ Custom</button>
+    </div>
+  </div>
+
+  {{#each system.formulas}}
+    <div class="ritual-entry">
+      <div class="ritual-item">
+        <span class="ritual-level">Lvl {{this.level}}</span>
+        <span class="ritual-name expandable-toggle" data-expand-group="formulas" data-expand-id="{{@index}}">&#9658; {{this.name}}{{#if this.custom}} *{{/if}}</span>
+        <span class="ritual-cost">{{this.cost}}</span>
+        <button type="button" class="item-delete delete-formula" data-index="{{@index}}">&#10005;</button>
+      </div>
+      <div class="ritual-detail expandable-detail" data-expand-group="formulas" data-expand-id="{{@index}}" style="display:none">
+        <div class="ritual-detail-desc">{{this.description}}</div>
+        <div class="ritual-detail-meta">
+          <span>Pool: <strong>{{this.pool}}</strong></span>
+          <span>Cost: <strong>{{this.cost}}</strong></span>
+          {{#if this.time}}<span>Time: <strong>{{this.time}}</strong></span>{{/if}}
+        </div>
+        {{#if this.ingredients}}
+          <div class="ritual-detail-ingredients">Ingredients: {{this.ingredients}}</div>
+        {{/if}}
+      </div>
+    </div>
+  {{/each}}
+
+  {{#unless system.formulas.length}}
+    <p class="empty-state">No alchemy formulas learned.</p>
   {{/unless}}
 </div>

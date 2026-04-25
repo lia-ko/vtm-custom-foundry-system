@@ -67,6 +67,17 @@
   border-color: var(--vtm-hunger-glow);
 }
 
+.vtm-custom .dot.stained {
+  background: transparent;
+  border-color: #cc2233;
+  box-shadow: inset 0 0 0 2px rgba(204, 34, 51, 0.3);
+}
+
+.vtm-custom .dot.empty {
+  background: transparent;
+  border-color: var(--vtm-border);
+}
+
 .vtm-custom .dot:hover,
 .vtm-custom .box:hover {
   transform: scale(1.2);

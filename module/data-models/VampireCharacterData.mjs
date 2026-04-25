@@ -114,6 +114,18 @@ export default class VampireCharacterData extends foundry.abstract.TypeDataModel
         custom: new BooleanField({ initial: false }),
       })),
 
+      // --- Thin-Blood Alchemy Formulas (dynamic list) ---
+      formulas: new ArrayField(new SchemaField({
+        name: new StringField({ required: true, initial: "" }),
+        level: new NumberField({ required: true, integer: true, initial: 1, min: 1, max: 5 }),
+        description: new StringField({ initial: "" }),
+        cost: new StringField({ initial: "1 Rouse" }),
+        pool: new StringField({ initial: "Int + Alchemy" }),
+        ingredients: new StringField({ initial: "" }),
+        time: new StringField({ initial: "" }),
+        custom: new BooleanField({ initial: false }),
+      })),
+
       // --- Willpower ---
       willpower: new SchemaField({
         max: new NumberField({ required: true, integer: true, initial: 1, min: 0, max: 10 }),
@@ -133,8 +145,14 @@ export default class VampireCharacterData extends foundry.abstract.TypeDataModel
       // --- Hunger (V5) ---
       hunger: new NumberField({ required: true, integer: true, initial: 0, min: 0, max: 5 }),
 
-      // --- Humanity ---
+      // --- Humanity & Stains ---
       humanity: new NumberField({ required: true, integer: true, initial: 7, min: 0, max: 10 }),
+      stains: new NumberField({ required: true, integer: true, initial: 0, min: 0, max: 10 }),
+      touchstones: new ArrayField(new SchemaField({
+        name: new StringField({ required: true, initial: "" }),
+        description: new StringField({ initial: "" }),
+        conviction: new StringField({ initial: "" }),
+      })),
 
       // --- Frenzy state ---
       // "" = not in frenzy, "fury", "hunger", "rotschreck"

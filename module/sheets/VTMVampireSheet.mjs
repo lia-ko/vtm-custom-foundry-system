@@ -4,11 +4,13 @@ import { applySharedHandlers, registerSharedListeners } from "./mixins/shared-ha
 import * as TrackerHandlers from "./handlers/trackers.mjs";
 import * as RollingHandlers from "./handlers/rolling.mjs";
 import * as DisciplineHandlers from "./handlers/disciplines.mjs";
+import * as RitualHandlers from "./handlers/rituals.mjs";
 import * as TraitHandlers from "./handlers/traits.mjs";
 import * as InventoryHandlers from "./handlers/inventory.mjs";
 import * as XPHandlers from "./handlers/xp.mjs";
 import * as HuntingHandlers from "./handlers/hunting.mjs";
 import * as ContactHandlers from "./handlers/contacts.mjs";
+import * as HumanityHandlers from "./handlers/humanity.mjs";
 
 export default class VTMVampireSheet extends ActorSheet {
 
@@ -43,7 +45,12 @@ export default class VTMVampireSheet extends ActorSheet {
     // Resource trackers
     context.willpowerBoxes = this._buildTrackerArray(system.willpower.current, system.willpower.max);
     context.hungerDots = this._buildTrackerArray(system.hunger, 5);
-    context.humanityDots = this._buildTrackerArray(system.humanity, 10);
+    // Humanity + Stains (stains fill from the right of the empty dots)
+    context.humanityDots = Array.from({ length: 10 }, (_, i) => {
+      if (i < system.humanity) return "filled";
+      if (i >= 10 - system.stains) return "stained";
+      return "empty";
+    });
     context.bloodPotencyDots = this._buildTrackerArray(system.bloodPotency, 5);
 
     // Frenzy
@@ -126,11 +133,13 @@ export default class VTMVampireSheet extends ActorSheet {
     TrackerHandlers.registerListeners(html, this);
     RollingHandlers.registerListeners(html, this);
     DisciplineHandlers.registerListeners(html, this);
+    RitualHandlers.registerListeners(html, this);
     TraitHandlers.registerListeners(html, this);
     InventoryHandlers.registerListeners(html, this);
     XPHandlers.registerListeners(html, this);
     HuntingHandlers.registerListeners(html, this);
     ContactHandlers.registerListeners(html, this);
+    HumanityHandlers.registerListeners(html, this);
     registerSharedListeners(html, this);
   }
 
@@ -155,7 +164,7 @@ export default class VTMVampireSheet extends ActorSheet {
 
 // Mix handler methods into the prototype
 applySharedHandlers(VTMVampireSheet);
-const handlerModules = [TrackerHandlers, RollingHandlers, DisciplineHandlers, TraitHandlers, InventoryHandlers, XPHandlers, HuntingHandlers, ContactHandlers];
+const handlerModules = [TrackerHandlers, RollingHandlers, DisciplineHandlers, RitualHandlers, TraitHandlers, InventoryHandlers, XPHandlers, HuntingHandlers, ContactHandlers, HumanityHandlers];
 for (const mod of handlerModules) {
   for (const [key, fn] of Object.entries(mod)) {
     if (key === "registerListeners") continue;
