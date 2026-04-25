@@ -1,0 +1,90 @@
+[
+  {
+    "surgeBonus": 1,
+    "mendAmount": 1,
+    "powerBonus": 0,
+    "rouseReroll": 0,
+    "baneSeverity": 0,
+    "feedingPenalty": "No effect"
+  },
+  {
+    "surgeBonus": 2,
+    "mendAmount": 1,
+    "powerBonus": 0,
+    "rouseReroll": 0,
+    "baneSeverity": 2,
+    "feedingPenalty": "No effect"
+  },
+  {
+    "surgeBonus": 2,
+    "mendAmount": 2,
+    "powerBonus": 1,
+    "rouseReroll": 0,
+    "baneSeverity": 2,
+    "feedingPenalty": "Animal and bagged blood slakes 1 less Hunger"
+  },
+  {
+    "surgeBonus": 3,
+    "mendAmount": 2,
+    "powerBonus": 1,
+    "rouseReroll": 0,
+    "baneSeverity": 3,
+    "feedingPenalty": "Animal and bagged blood slakes 1 less Hunger"
+  },
+  {
+    "surgeBonus": 3,
+    "mendAmount": 3,
+    "powerBonus": 2,
+    "rouseReroll": 0,
+    "baneSeverity": 3,
+    "feedingPenalty": "Animal and bagged blood provides no nourishment. Must feed from humans."
+  },
+  {
+    "surgeBonus": 4,
+    "mendAmount": 3,
+    "powerBonus": 2,
+    "rouseReroll": 1,
+    "baneSeverity": 4,
+    "feedingPenalty": "Animal and bagged blood provides no nourishment. Must feed from humans."
+  },
+  {
+    "surgeBonus": 4,
+    "mendAmount": 3,
+    "powerBonus": 3,
+    "rouseReroll": 1,
+    "baneSeverity": 4,
+    "feedingPenalty": "Must drain and kill a human to reduce Hunger below 2."
+  },
+  {
+    "surgeBonus": 5,
+    "mendAmount": 3,
+    "powerBonus": 3,
+    "rouseReroll": 2,
+    "baneSeverity": 5,
+    "feedingPenalty": "Must drain and kill a human to reduce Hunger below 2. Animal/bagged blood causes retching."
+  },
+  {
+    "surgeBonus": 5,
+    "mendAmount": 4,
+    "powerBonus": 4,
+    "rouseReroll": 2,
+    "baneSeverity": 5,
+    "feedingPenalty": "Must drain and kill a human to reduce Hunger below 3."
+  },
+  {
+    "surgeBonus": 6,
+    "mendAmount": 4,
+    "powerBonus": 4,
+    "rouseReroll": 3,
+    "baneSeverity": 6,
+    "feedingPenalty": "Must drain and kill a human to reduce Hunger below 3. Only Kindred vitae fully sates."
+  },
+  {
+    "surgeBonus": 6,
+    "mendAmount": 5,
+    "powerBonus": 5,
+    "rouseReroll": 3,
+    "baneSeverity": 6,
+    "feedingPenalty": "Must drain and kill a human to reduce Hunger below 4. Only Kindred vitae fully sates."
+  }
+]

@@ -1,0 +1,185 @@
+/* --- Inventory --- */
+.vtm-custom .inv-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 7px;
+  background: var(--vtm-bg-light);
+  border-radius: 3px;
+  margin-bottom: 3px;
+  border: 1px solid transparent;
+}
+
+.vtm-custom .inv-item:hover {
+  border-color: var(--vtm-border);
+}
+
+.vtm-custom .inv-item.weapon-rollable {
+  cursor: pointer;
+}
+
+.vtm-custom .inv-item .roll-icon {
+  font-size: 10px;
+  color: var(--vtm-border);
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+  transition: color 0.15s;
+}
+
+.vtm-custom .inv-item.weapon-rollable:hover .roll-icon {
+  color: var(--vtm-accent-light);
+}
+
+.vtm-custom .inv-item .inv-name {
+  flex: 1;
+  font-size: 11px;
+}
+
+.vtm-custom .inv-item .inv-meta {
+  font-size: 9px;
+  color: var(--vtm-text-dim);
+}
+
+.vtm-custom .inv-item .inv-pool {
+  font-size: 9px;
+  color: var(--vtm-accent-light);
+}
+
+.vtm-custom .inv-item .item-delete {
+  color: var(--vtm-text-dim);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 2px 4px;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+.vtm-custom .inv-item .item-delete:hover {
+  color: var(--vtm-accent-light);
+}
+
+/* --- Add Form --- */
+.vtm-custom .add-form {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 6px;
+  padding: 6px 7px;
+  background: var(--vtm-bg-light);
+  border: 1px solid var(--vtm-border);
+  border-radius: 3px;
+  flex-wrap: wrap;
+}
+
+.vtm-custom .add-form input,
+.vtm-custom .add-form select {
+  flex: 1;
+}
+
+.vtm-custom .add-form button {
+  background: var(--vtm-accent);
+  color: var(--vtm-text-bright);
+  border: 1px solid var(--vtm-accent-light);
+  padding: 3px 8px;
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 2px;
+  font-family: inherit;
+}
+
+/* --- Currency --- */
+.vtm-custom .currency-block {
+  background: var(--vtm-bg-light);
+  border: 1px solid var(--vtm-border);
+  border-radius: 4px;
+  padding: 10px 12px;
+}
+
+.vtm-custom .currency-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vtm-custom .currency-amount {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--vtm-gold);
+  flex: 1;
+}
+
+.vtm-custom .currency-label {
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--vtm-gold-dim);
+  margin-bottom: 3px;
+}
+
+/* --- Price tag on owned items --- */
+.vtm-custom .inv-price {
+  font-size: 8px;
+  color: var(--vtm-gold-dim);
+  font-style: italic;
+}
+
+/* --- Shop --- */
+.vtm-custom .shop-section {
+  margin-top: 8px;
+}
+
+.vtm-custom .shop-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 7px;
+  background: var(--vtm-bg-light);
+  border-radius: 3px;
+  margin-bottom: 3px;
+  border: 1px solid transparent;
+}
+
+.vtm-custom .shop-item:hover {
+  border-color: var(--vtm-border);
+}
+
+.vtm-custom .shop-item-name {
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--vtm-text-bright);
+  min-width: 120px;
+  flex-shrink: 0;
+}
+
+.vtm-custom .shop-item-meta {
+  font-size: 9px;
+  color: var(--vtm-text-dim);
+  flex-shrink: 0;
+  min-width: 45px;
+}
+
+.vtm-custom .shop-item-desc {
+  font-size: 9px;
+  color: var(--vtm-text-dim);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vtm-custom .shop-item-price {
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--vtm-gold);
+  flex-shrink: 0;
+  min-width: 50px;
+  text-align: right;
+}
+
+.vtm-custom .shop-item .btn {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  font-size: 9px;
+}

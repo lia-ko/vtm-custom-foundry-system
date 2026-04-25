@@ -1,0 +1,14 @@
+<h2>Disciplines</h2>
+<p class="wizard-hint">Distribute 2 dots among your in-clan disciplines. Remaining: {{data.discDotsRemaining}}</p>
+
+{{#each data.disciplines}}
+  <div class="wizard-disc-row">
+    <span class="wizard-disc-icon" style="color:{{this.color}}">{{this.icon}}</span>
+    <span class="wizard-disc-name">{{this.name}}</span>
+    <div class="wizard-dots">
+      {{#each (dotArray this.value 2)}}
+        <span class="dot {{#if this}}filled{{/if}} wizard-disc-dot" data-disc="{{../@index}}" data-value="{{math @index 1}}"></span>
+      {{/each}}
+    </div>
+  </div>
+{{/each}}

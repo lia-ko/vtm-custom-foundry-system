@@ -1,0 +1,44 @@
+<h2>Skills</h2>
+<p class="wizard-hint">Distribute: 1 skill at 3 dots, 8 skills at 2 dots, 10 skills at 1 dot. Leave the rest at 0.</p>
+
+<div class="wizard-skills-grid">
+  <div>
+    <h3>Talents</h3>
+    {{#each (keys "alertness,athletics,awareness,brawl,empathy,expression,intimidation,leadership,streetwise,subterfuge")}}
+      <div class="wizard-dot-row">
+        <span class="wizard-dot-label" style="text-transform:capitalize">{{this}}</span>
+        <div class="wizard-dots">
+          {{#each (dotArray (lookupDefault ../../data.talents this 0) 3)}}
+            <span class="dot {{#if this}}filled{{/if}} wizard-dot" data-group="talents" data-key="{{../this}}" data-value="{{math @index 1}}"></span>
+          {{/each}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <div>
+    <h3>Skills</h3>
+    {{#each (keys "animalKen,crafts,drive,etiquette,firearms,larceny,melee,performance,stealth,survival")}}
+      <div class="wizard-dot-row">
+        <span class="wizard-dot-label" style="text-transform:capitalize">{{formatKey this}}</span>
+        <div class="wizard-dots">
+          {{#each (dotArray (lookupDefault ../../data.skills this 0) 3)}}
+            <span class="dot {{#if this}}filled{{/if}} wizard-dot" data-group="skills" data-key="{{../this}}" data-value="{{math @index 1}}"></span>
+          {{/each}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <div>
+    <h3>Knowledges</h3>
+    {{#each (keys "academics,computer,finance,investigation,law,medicine,occult,politics,science,technology")}}
+      <div class="wizard-dot-row">
+        <span class="wizard-dot-label" style="text-transform:capitalize">{{formatKey this}}</span>
+        <div class="wizard-dots">
+          {{#each (dotArray (lookupDefault ../../data.knowledges this 0) 3)}}
+            <span class="dot {{#if this}}filled{{/if}} wizard-dot" data-group="knowledges" data-key="{{../this}}" data-value="{{math @index 1}}"></span>
+          {{/each}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

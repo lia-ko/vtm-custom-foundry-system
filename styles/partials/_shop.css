@@ -1,0 +1,45 @@
+/* --- Shop Sheet --- */
+
+.vtm-custom.shop .shop-info-bar {
+  display: flex;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--vtm-bg-light);
+  border-bottom: 1px solid var(--vtm-border);
+}
+
+.vtm-custom.shop .shop-type-input {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.vtm-custom.shop .shop-desc-input {
+  flex: 1;
+}
+
+.vtm-custom.shop .shop-description {
+  font-size: 11px;
+  color: var(--vtm-text-dim);
+  font-style: italic;
+}
+
+.vtm-custom .shop-item-stock {
+  font-size: 9px;
+  color: var(--vtm-gold);
+  background: rgba(196, 163, 90, 0.1);
+  border: 1px solid rgba(196, 163, 90, 0.3);
+  padding: 1px 5px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.vtm-custom .shop-manage-actions {
+  padding: 10px;
+  background: var(--vtm-bg-light);
+  border: 1px solid var(--vtm-border);
+  border-radius: 4px;
+}
+
+.vtm-custom .shop-manage-actions .btn {
+  margin-bottom: 6px;
+}

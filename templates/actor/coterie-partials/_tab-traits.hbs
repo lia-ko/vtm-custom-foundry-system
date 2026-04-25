@@ -1,0 +1,63 @@
+<div class="tab" data-group="primary" data-tab="traits">
+  <div class="section-header">
+    <h3>Coterie Merits</h3>
+    <div class="header-buttons">
+      <button type="button" class="btn btn-red add-coterie-merit">+ Add</button>
+    </div>
+  </div>
+
+  {{#each system.merits}}
+    <div class="mf-entry">
+      <div class="mf-row">
+        <span class="mf-name expandable-toggle" data-expand-group="coterie-merits" data-expand-id="{{@index}}">&#9658; {{this.name}}</span>
+        <div class="dot-set">
+          {{#each (dotArray this.value 5)}}
+            <span class="dot {{#if this}}filled{{/if}}"></span>
+          {{/each}}
+        </div>
+        <button type="button" class="item-delete delete-coterie-merit" data-index="{{@index}}">&#10005;</button>
+      </div>
+      {{#if this.description}}
+        <div class="mf-detail expandable-detail" data-expand-group="coterie-merits" data-expand-id="{{@index}}" style="display:none">
+          <div class="mf-detail-desc">{{this.description}}</div>
+        </div>
+      {{/if}}
+    </div>
+  {{/each}}
+
+  {{#unless system.merits.length}}
+    <p class="empty-state">No coterie merits.</p>
+  {{/unless}}
+
+  <hr class="divider">
+
+  <div class="section-header">
+    <h3>Coterie Flaws</h3>
+    <div class="header-buttons">
+      <button type="button" class="btn btn-red add-coterie-flaw">+ Add</button>
+    </div>
+  </div>
+
+  {{#each system.flaws}}
+    <div class="mf-entry">
+      <div class="mf-row">
+        <span class="mf-name expandable-toggle" data-expand-group="coterie-flaws" data-expand-id="{{@index}}">&#9658; {{this.name}}</span>
+        <div class="dot-set">
+          {{#each (dotArray this.value 5)}}
+            <span class="dot {{#if this}}filled{{/if}}"></span>
+          {{/each}}
+        </div>
+        <button type="button" class="item-delete delete-coterie-flaw" data-index="{{@index}}">&#10005;</button>
+      </div>
+      {{#if this.description}}
+        <div class="mf-detail expandable-detail" data-expand-group="coterie-flaws" data-expand-id="{{@index}}" style="display:none">
+          <div class="mf-detail-desc">{{this.description}}</div>
+        </div>
+      {{/if}}
+    </div>
+  {{/each}}
+
+  {{#unless system.flaws.length}}
+    <p class="empty-state">No coterie flaws.</p>
+  {{/unless}}
+</div>

@@ -1,0 +1,19 @@
+<h2>Attributes</h2>
+<p class="wizard-hint">Distribute 4/3/2 bonus dots across Physical, Social, and Mental (each attribute starts at 1). Max 5 per attribute.</p>
+
+{{#each attrCategories}}
+  <div class="wizard-attr-group">
+    <h3>{{this.label}} <span class="wizard-dot-count">({{this.total}} bonus dots)</span></h3>
+    {{#each this.keys}}
+      <div class="wizard-dot-row">
+        <span class="wizard-dot-label">{{lookup ../../data.attributes this}}</span>
+        <span class="wizard-dot-label" style="text-transform:capitalize">{{this}}</span>
+        <div class="wizard-dots">
+          {{#each (dotArray (lookup ../../data.attributes this) 5)}}
+            <span class="dot {{#if this}}filled{{/if}} wizard-dot" data-group="attr" data-key="{{../this}}" data-value="{{math @index 1}}"></span>
+          {{/each}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+{{/each}}

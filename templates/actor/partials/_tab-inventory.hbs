@@ -8,10 +8,12 @@
   </div>
 
   {{#each weaponsList}}
-    <div class="inv-item">
+    <div class="inv-item weapon-rollable" data-weapon-index="{{@index}}">
+      <span class="roll-icon" title="Roll {{this.name}}">&#9861;</span>
       <span class="inv-name" style="font-weight:bold">{{this.name}}</span>
       <span class="inv-meta">{{this.type}}</span>
       <span class="inv-pool">{{this.attrLabel}} + {{this.skillLabel}} ({{this.pool}})</span>
+      {{#if this.price}}<span class="inv-price">${{this.price}}</span>{{/if}}
       <button type="button" class="item-delete delete-weapon" data-index="{{@index}}">&#10005;</button>
     </div>
   {{/each}}
@@ -32,6 +34,7 @@
     <div class="inv-item">
       <span class="inv-name">{{this.name}}</span>
       <span class="inv-meta">{{this.description}}</span>
+      {{#if this.price}}<span class="inv-price">${{this.price}}</span>{{/if}}
       <button type="button" class="item-delete delete-gear" data-index="{{@index}}">&#10005;</button>
     </div>
   {{/each}}

@@ -79,6 +79,16 @@
     <div class="action-separator"></div>
     <button type="button" class="action-btn rouse-check">&#9862; Rouse check</button>
     <div class="action-separator"></div>
+    <button type="button" class="action-btn hunt-btn">&#9788; Hunt</button>
+    <div class="action-separator"></div>
     <button type="button" class="action-btn frenzy-btn frenzy-check">&#9760; Frenzy check</button>
   </div>
+
+  {{!-- Current resonance --}}
+  {{#if system.resonance}}
+    <div class="resonance-display">
+      <span class="resonance-label">Resonance:</span>
+      <span class="resonance-tag resonance-{{system.resonance}}">{{system.resonance}}</span>
+    </div>
+  {{/if}}
 </div>

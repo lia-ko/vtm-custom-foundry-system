@@ -1,0 +1,14 @@
+<div class="vtm-roll vtm-v5-roll">
+  <div class="vtm-roll-label">{{label}}</div>
+  <div class="vtm-roll-info">Pool: {{pool}} | Hunger: {{hungerCount}} | Need: {{difficulty}} successes</div>
+  <div class="vtm-roll-dice">
+    {{#each results}}
+      <span class="vtm-die {{this.class}}{{#if this.hunger}} hunger-die{{/if}}">{{this.value}}</span>
+    {{/each}}
+  </div>
+  <div class="vtm-roll-result {{outcomeClass}}">
+    {{outcome}} ({{successes}}/{{difficulty}})
+  </div>
+  {{#if messyCrit}}<div class="vtm-roll-warning messy">A Beast lurks behind this victory...</div>{{/if}}
+  {{#if bestialFailure}}<div class="vtm-roll-warning bestial">The Beast claws at the surface!</div>{{/if}}
+</div>

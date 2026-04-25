@@ -1,0 +1,17 @@
+/* --- CSS Variables --- */
+:root {
+  --vtm-bg: #1a1a1e;
+  --vtm-bg-light: #242428;
+  --vtm-bg-lighter: #2e2e34;
+  --vtm-surface: #32323a;
+  --vtm-border: #444450;
+  --vtm-text: #e0ddd5;
+  --vtm-text-dim: #8a8880;
+  --vtm-text-bright: #f5f0e8;
+  --vtm-accent: #8b1a1a;
+  --vtm-accent-light: #b33030;
+  --vtm-gold: #c4a35a;
+  --vtm-gold-dim: #8a7340;
+  --vtm-hunger: #991111;
+  --vtm-hunger-glow: #ff2222;
+}

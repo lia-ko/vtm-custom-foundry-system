@@ -1,0 +1,68 @@
+/* --- 3-Column Grid (Attributes / Skills) --- */
+.vtm-custom .grid-3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+}
+
+.vtm-custom .grid-3col .col h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--vtm-gold);
+  border-bottom: 1px solid var(--vtm-gold-dim);
+  padding-bottom: 3px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight: normal;
+}
+
+.vtm-custom .attr-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 4px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.vtm-custom .attr-row:hover {
+  background: var(--vtm-bg-lighter);
+}
+
+.vtm-custom .attr-row.rollable {
+  cursor: pointer;
+}
+
+.vtm-custom .attr-row .roll-icon {
+  font-size: 10px;
+  color: var(--vtm-border);
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+  transition: color 0.15s;
+}
+
+.vtm-custom .attr-row.rollable:hover .roll-icon {
+  color: var(--vtm-accent-light);
+}
+
+.vtm-custom .attr-row.rollable:hover .attr-label {
+  color: var(--vtm-text-bright);
+}
+
+.vtm-custom .attr-row .attr-label {
+  font-size: 11px;
+  text-transform: capitalize;
+  flex: 1;
+}
+
+.vtm-custom .dot-set {
+  display: flex;
+  gap: 2px;
+}
+
+.vtm-custom .dot-set .dot {
+  width: 11px;
+  height: 11px;
+}

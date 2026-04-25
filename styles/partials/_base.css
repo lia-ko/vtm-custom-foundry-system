@@ -1,0 +1,61 @@
+/* --- Base Sheet --- */
+.vtm-custom.sheet {
+  font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  background: var(--vtm-bg);
+  color: var(--vtm-text);
+  border: 1px solid var(--vtm-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.vtm-custom.sheet * {
+  box-sizing: border-box;
+}
+
+.vtm-custom.sheet input,
+.vtm-custom.sheet select,
+.vtm-custom.sheet textarea,
+.vtm-custom.sheet button {
+  font-family: inherit;
+}
+
+.vtm-custom.sheet input,
+.vtm-custom.sheet select,
+.vtm-custom.sheet textarea {
+  background: var(--vtm-bg-lighter);
+  color: var(--vtm-text);
+  border: 1px solid var(--vtm-border);
+  padding: 3px 6px;
+  font-size: 10px;
+  border-radius: 2px;
+}
+
+.vtm-custom.sheet input::placeholder,
+.vtm-custom.sheet textarea::placeholder {
+  color: var(--vtm-text-dim);
+}
+
+.vtm-custom.sheet input:focus,
+.vtm-custom.sheet select:focus,
+.vtm-custom.sheet textarea:focus {
+  outline: none;
+  border-color: var(--vtm-accent-light);
+}
+
+/* --- Scrollbar --- */
+.vtm-custom .sheet-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.vtm-custom .sheet-body::-webkit-scrollbar-track {
+  background: var(--vtm-bg);
+}
+
+.vtm-custom .sheet-body::-webkit-scrollbar-thumb {
+  background: var(--vtm-border);
+  border-radius: 3px;
+}
+
+.vtm-custom .sheet-body::-webkit-scrollbar-thumb:hover {
+  background: var(--vtm-text-dim);
+}

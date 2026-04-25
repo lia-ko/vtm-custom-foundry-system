@@ -1,0 +1,28 @@
+<h2>Advantages</h2>
+<p class="wizard-hint">Spend 7 dots on Merits and Backgrounds, and take 2 dots of Flaws.</p>
+
+<div class="wizard-adv-pools">
+  <span class="wizard-pool-tag">Merit/Background dots: {{data.meritDotsRemaining}} remaining</span>
+  <span class="wizard-pool-tag flaw">Flaw dots: {{data.flawDotsRemaining}} remaining</span>
+</div>
+
+<div class="wizard-adv-section">
+  <div class="section-header"><h3>Backgrounds</h3><button type="button" class="btn btn-red wizard-add-bg">+ Add</button></div>
+  {{#each data.backgrounds}}
+    <div class="wizard-adv-item"><span>{{this.name}}</span><span class="wizard-adv-dots">{{this.value}} dots</span><button type="button" class="wizard-remove-item" data-list="backgrounds" data-index="{{@index}}">&#10005;</button></div>
+  {{/each}}
+</div>
+
+<div class="wizard-adv-section">
+  <div class="section-header"><h3>Merits</h3><button type="button" class="btn btn-red wizard-add-merit">+ Add</button></div>
+  {{#each data.merits}}
+    <div class="wizard-adv-item"><span>{{this.name}}</span><span class="wizard-adv-dots">{{this.value}} dots</span><button type="button" class="wizard-remove-item" data-list="merits" data-index="{{@index}}">&#10005;</button></div>
+  {{/each}}
+</div>
+
+<div class="wizard-adv-section">
+  <div class="section-header"><h3>Flaws</h3><button type="button" class="btn btn-red wizard-add-flaw">+ Add</button></div>
+  {{#each data.flaws}}
+    <div class="wizard-adv-item"><span>{{this.name}}</span><span class="wizard-adv-dots">{{this.value}} dots</span><button type="button" class="wizard-remove-item" data-list="flaws" data-index="{{@index}}">&#10005;</button></div>
+  {{/each}}
+</div>

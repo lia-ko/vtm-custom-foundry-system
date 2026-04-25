@@ -1,0 +1,39 @@
+<form class="vtm-roll-dialog">
+  <div class="form-group">
+    <label>Attribute</label>
+    <select name="attr">
+      {{#each attributes}}
+        <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{this.label}} ({{this.value}})</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Skill</label>
+    <select name="skill">
+      {{#each skills}}
+        <option value="{{this.key}}" {{#if this.selected}}selected{{/if}}>{{this.label}} ({{this.value}})</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Modifier</label>
+    <input type="number" name="mod" value="0" />
+  </div>
+  <div class="form-group">
+    <label>Difficulty (successes needed)</label>
+    <input type="number" name="diff" value="{{difficulty}}" min="1" />
+  </div>
+  <div class="form-group">
+    <label>Hunger Dice</label>
+    <input type="number" name="hunger" value="{{hunger}}" min="0" max="5" />
+  </div>
+  <div class="form-group">
+    <label style="display:flex;align-items:center;gap:6px">
+      <input type="checkbox" name="isAnimal" style="width:auto" />
+      Feeding on animals (Hunger cannot drop below 1)
+    </label>
+  </div>
+  <div style="font-size:9px;color:#8a8880;padding:4px 0;border-top:1px solid #444450;margin-top:4px">
+    ST default pool: {{poolDescription}} | Slakes {{hungerSlaked}} Hunger on success | Current Hunger: {{currentHunger}}
+  </div>
+</form>

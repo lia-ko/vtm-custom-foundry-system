@@ -1,0 +1,103 @@
+/* --- Dice Roll Chat Messages --- */
+.vtm-roll {
+  padding: 0.5rem;
+}
+
+.vtm-roll-label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.vtm-roll-info {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.vtm-roll-dice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.vtm-die {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  border: 2px solid #333;
+  background: #f0f0f0;
+  color: #333;
+}
+
+.vtm-die.success {
+  background: #2d5a2d;
+  color: #fff;
+  border-color: #1a3a1a;
+}
+
+.vtm-die.failure {
+  background: #f0f0f0;
+  color: #666;
+  border-color: #999;
+}
+
+.vtm-die.botch {
+  background: #8b0000;
+  color: #fff;
+  border-color: #5a0000;
+}
+
+.vtm-die.hunger-die {
+  border-color: #600;
+  border-style: dashed;
+}
+
+.vtm-die.bestial {
+  background: #4a0000;
+  color: #ff4444;
+  border-color: #ff0000;
+}
+
+.vtm-die.hunger-success {
+  background: #5a2d2d;
+  color: #fff;
+  border-color: #600;
+}
+
+.vtm-die.hunger-fail {
+  background: #f0e0e0;
+  color: #600;
+  border-color: #600;
+}
+
+.vtm-roll-result {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.vtm-roll-result.success { color: #2d5a2d; }
+.vtm-roll-result.failure { color: #666; }
+.vtm-roll-result.botch { color: #8b0000; }
+.vtm-roll-result.bestial-failure { color: #ff0000; text-shadow: 0 0 4px rgba(255, 0, 0, 0.3); }
+.vtm-roll-result.messy-critical { color: #8b0000; text-shadow: 0 0 4px rgba(139, 0, 0, 0.3); }
+
+.vtm-die.rouse-pass {
+  background: #2d5a2d;
+  color: #fff;
+  border-color: #1a3a1a;
+}
+
+.vtm-die.rouse-fail {
+  background: #8b0000;
+  color: #fff;
+  border-color: #5a0000;
+}
+
+.vtm-roll-result.rouse-passed { color: #4a8a4a; }
+.vtm-roll-result.rouse-failed { color: #ff2222; }

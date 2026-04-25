@@ -1,0 +1,28 @@
+<div class="tab" data-group="primary" data-tab="weapons">
+  {{#if isGM}}
+    <div class="section-header">
+      <h3>Weapons ({{system.weapons.length}})</h3>
+      <div class="header-buttons">
+        <button type="button" class="btn btn-red shop-add-weapon">+ Add Weapon</button>
+      </div>
+    </div>
+  {{/if}}
+
+  {{#each system.weapons}}
+    <div class="shop-item">
+      <span class="shop-item-name">{{this.name}}</span>
+      <span class="shop-item-meta">{{this.type}}</span>
+      <span class="shop-item-desc">{{this.description}}</span>
+      {{#if (gt this.stock 0)}}<span class="shop-item-stock">x{{this.stock}}</span>{{/if}}
+      <span class="shop-item-price">${{this.price}}</span>
+      <button type="button" class="btn btn-red shop-buy-weapon" data-index="{{@index}}">Buy</button>
+      {{#if ../isGM}}
+        <button type="button" class="item-delete shop-delete-weapon" data-index="{{@index}}">&#10005;</button>
+      {{/if}}
+    </div>
+  {{/each}}
+
+  {{#unless system.weapons.length}}
+    <p class="empty-state">No weapons in stock.</p>
+  {{/unless}}
+</div>

@@ -1,0 +1,86 @@
+/* --- Coterie Sheet --- */
+
+.vtm-custom.coterie .coterie-tracker-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.vtm-custom.coterie .coterie-tracker {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.vtm-custom.coterie .coterie-tracker label {
+  font-size: 11px;
+  color: var(--vtm-text-bright);
+  font-weight: bold;
+}
+
+.vtm-custom.coterie .coterie-tracker-desc {
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--vtm-gold-dim);
+  margin-bottom: 2px;
+}
+
+/* --- Members --- */
+
+.vtm-custom .member-drop-zone {
+  min-height: 80px;
+  border: 1px dashed var(--vtm-border);
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.vtm-custom .member-drop-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+}
+
+.vtm-custom .member-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: var(--vtm-bg-light);
+  border: 1px solid var(--vtm-border);
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.vtm-custom .member-card:hover {
+  border-color: var(--vtm-accent-light);
+}
+
+.vtm-custom .member-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  border: 1px solid var(--vtm-border);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.vtm-custom .member-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.vtm-custom .member-name {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--vtm-text-bright);
+}
+
+.vtm-custom .member-clan {
+  font-size: 9px;
+  color: var(--vtm-text-dim);
+}

@@ -1,0 +1,34 @@
+<div class="tab" data-group="primary" data-tab="contacts">
+  <div class="section-header">
+    <h3>Contacts &amp; Relationships</h3>
+    <div class="header-buttons">
+      <button type="button" class="btn btn-red add-contact">+ Add</button>
+    </div>
+  </div>
+
+  {{#each system.contacts}}
+    <div class="mf-entry">
+      <div class="mf-row">
+        <span class="mf-cat-tag {{#if (eq this.type 'enemy')}}flaw-tag{{/if}} contact-type-{{this.type}}">{{this.type}}</span>
+        <span class="mf-name expandable-toggle" data-expand-group="contacts" data-expand-id="{{@index}}">&#9658; {{this.name}}</span>
+        {{#if this.value}}
+          <div class="dot-set">
+            {{#each (dotArray this.value 5)}}
+              <span class="dot {{#if this}}filled{{/if}}"></span>
+            {{/each}}
+          </div>
+        {{/if}}
+        <button type="button" class="item-delete delete-contact" data-index="{{@index}}">&#10005;</button>
+      </div>
+      {{#if this.description}}
+        <div class="mf-detail expandable-detail" data-expand-group="contacts" data-expand-id="{{@index}}" style="display:none">
+          <div class="mf-detail-desc">{{this.description}}</div>
+        </div>
+      {{/if}}
+    </div>
+  {{/each}}
+
+  {{#unless system.contacts.length}}
+    <p class="empty-state">No contacts or relationships tracked.</p>
+  {{/unless}}
+</div>

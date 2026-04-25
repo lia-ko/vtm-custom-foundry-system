@@ -140,6 +140,18 @@ export default class VampireCharacterData extends foundry.abstract.TypeDataModel
       // "" = not in frenzy, "fury", "hunger", "rotschreck"
       frenzy: new StringField({ initial: "" }),
 
+      // --- Feeding / Resonance ---
+      resonance: new StringField({ initial: "" }), // sanguine, choleric, melancholic, phlegmatic, animal, empty
+      lastFeedDate: new StringField({ initial: "" }),
+
+      // --- Contacts / Relationships ---
+      contacts: new ArrayField(new SchemaField({
+        name: new StringField({ required: true, initial: "" }),
+        type: new StringField({ initial: "contact" }), // ally, enemy, contact, lover, sire, other
+        description: new StringField({ initial: "" }),
+        value: new NumberField({ integer: true, initial: 0, min: 0, max: 5 }),
+      })),
+
       // --- Experience ---
       experience: new SchemaField({
         total: new NumberField({ required: true, integer: true, initial: 0, min: 0 }),
@@ -180,12 +192,14 @@ export default class VampireCharacterData extends foundry.abstract.TypeDataModel
         type: new StringField({ initial: "Melee" }),
         attribute: new StringField({ initial: "dexterity" }),
         skill: new StringField({ initial: "melee" }),
+        price: new NumberField({ integer: true, initial: 0, min: 0 }),
       })),
 
       // --- Gear ---
       gear: new ArrayField(new SchemaField({
         name: new StringField({ required: true, initial: "" }),
         description: new StringField({ initial: "" }),
+        price: new NumberField({ integer: true, initial: 0, min: 0 }),
       })),
 
       // --- Currency ---

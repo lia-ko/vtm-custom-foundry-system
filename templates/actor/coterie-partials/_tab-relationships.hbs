@@ -1,0 +1,34 @@
+<div class="tab" data-group="primary" data-tab="relationships">
+  <div class="section-header">
+    <h3>Relationships</h3>
+    <div class="header-buttons">
+      <button type="button" class="btn btn-red add-relationship">+ Add</button>
+    </div>
+  </div>
+
+  {{#each system.relationships}}
+    <div class="mf-entry">
+      <div class="mf-row">
+        <span class="mf-cat-tag {{#if (eq this.type 'enemy')}}flaw-tag{{/if}}">{{this.type}}</span>
+        <span class="mf-name expandable-toggle" data-expand-group="relationships" data-expand-id="{{@index}}">&#9658; {{this.name}}</span>
+        {{#if this.value}}
+          <div class="dot-set">
+            {{#each (dotArray this.value 5)}}
+              <span class="dot {{#if this}}filled{{/if}}"></span>
+            {{/each}}
+          </div>
+        {{/if}}
+        <button type="button" class="item-delete delete-relationship" data-index="{{@index}}">&#10005;</button>
+      </div>
+      {{#if this.description}}
+        <div class="mf-detail expandable-detail" data-expand-group="relationships" data-expand-id="{{@index}}" style="display:none">
+          <div class="mf-detail-desc">{{this.description}}</div>
+        </div>
+      {{/if}}
+    </div>
+  {{/each}}
+
+  {{#unless system.relationships.length}}
+    <p class="empty-state">No relationships tracked.</p>
+  {{/unless}}
+</div>

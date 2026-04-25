@@ -1,0 +1,84 @@
+/* --- Merits & Flaws --- */
+.vtm-custom .mf-entry {
+  background: var(--vtm-bg-light);
+  border-radius: 3px;
+  margin-bottom: 3px;
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+
+.vtm-custom .mf-entry:hover {
+  border-color: var(--vtm-border);
+}
+
+.vtm-custom .mf-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 7px;
+}
+
+.vtm-custom .mf-cat-tag {
+  font-size: 7px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--vtm-gold);
+  background: rgba(196, 163, 90, 0.1);
+  border: 1px solid rgba(196, 163, 90, 0.3);
+  padding: 1px 5px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.vtm-custom .mf-cat-tag.flaw-tag {
+  color: var(--vtm-accent-light);
+  background: rgba(139, 26, 26, 0.12);
+  border-color: rgba(179, 48, 48, 0.3);
+}
+
+.vtm-custom .mf-name {
+  font-size: 11px;
+  color: var(--vtm-text);
+  flex: 1;
+  cursor: pointer;
+}
+
+.vtm-custom .mf-name:hover {
+  color: var(--vtm-text-bright);
+}
+
+.vtm-custom .mf-detail {
+  padding: 4px 10px 8px 20px;
+  border-top: 1px solid var(--vtm-border);
+}
+
+.vtm-custom .mf-detail-desc {
+  font-size: 10px;
+  color: var(--vtm-text);
+  line-height: 1.5;
+}
+
+.vtm-custom .advantage-row {
+  padding-right: 4px;
+}
+
+.vtm-custom .advantage-row .item-delete {
+  color: var(--vtm-text-dim);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 2px 4px;
+  border: none;
+  background: none;
+  font-family: inherit;
+  margin-left: 4px;
+}
+
+.vtm-custom .advantage-row .item-delete:hover {
+  color: var(--vtm-accent-light);
+}
+
+/* --- Contact type tags --- */
+.vtm-custom .contact-type-ally { color: #5ac47a !important; border-color: rgba(90, 196, 122, 0.3) !important; background: rgba(90, 196, 122, 0.1) !important; }
+.vtm-custom .contact-type-lover { color: #c45a7a !important; border-color: rgba(196, 90, 122, 0.3) !important; background: rgba(196, 90, 122, 0.1) !important; }
+.vtm-custom .contact-type-sire { color: #8a5ac4 !important; border-color: rgba(138, 90, 196, 0.3) !important; background: rgba(138, 90, 196, 0.1) !important; }
+.vtm-custom .contact-type-other { color: var(--vtm-text-dim) !important; }

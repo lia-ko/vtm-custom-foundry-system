@@ -1,0 +1,24 @@
+<div class="tab" data-group="primary" data-tab="members">
+  <div class="section-header">
+    <h3>Coterie Members</h3>
+  </div>
+
+  <div class="member-drop-zone">
+    {{#each memberActors}}
+      <div class="member-card">
+        <img class="member-img" src="{{this.img}}" title="{{this.name}}" />
+        <div class="member-info">
+          <span class="member-name">{{this.name}}</span>
+          <span class="member-clan">{{this.system.clan}}{{#if this.system.generation}} — {{this.system.generation}}{{/if}}</span>
+        </div>
+        <button type="button" class="item-delete remove-member" data-id="{{this.id}}">&#10005;</button>
+      </div>
+    {{/each}}
+
+    {{#unless memberActors.length}}
+      <div class="member-drop-hint">
+        <p class="empty-state">Drag vampire characters here to add them to the coterie.</p>
+      </div>
+    {{/unless}}
+  </div>
+</div>

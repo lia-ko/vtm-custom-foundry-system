@@ -1,0 +1,19 @@
+<h2>Predator Type</h2>
+<p class="wizard-hint">Choose how your character hunts. This grants skill bonuses, a discipline dot, and a merit/flaw.</p>
+
+{{#each predatorTypes}}
+  <div class="wizard-predator-card {{#if (eq this.name ../data.predatorType)}}selected{{/if}}" data-predator="{{this.name}}">
+    <div class="wizard-predator-header wizard-predator" data-predator="{{this.name}}">
+      <strong>{{this.name}}</strong>
+      {{#if this.humanityMod}}<span class="wizard-humanity-mod">Humanity {{#if (gt this.humanityMod 0)}}+{{/if}}{{this.humanityMod}}</span>{{/if}}
+    </div>
+    <div class="wizard-predator-desc">{{this.description}}</div>
+    <div class="wizard-predator-bonuses">
+      <span>+1 {{this.skillBonus.key}}</span>
+      <span>+1 {{this.secondSkillBonus.key}}</span>
+      <span>Disc: {{#each this.disciplineOptions}}{{this}}{{#unless @last}} / {{/unless}}{{/each}}</span>
+      {{#if this.merit}}<span class="wizard-bonus-merit">{{this.merit.name}}</span>{{/if}}
+      {{#if this.flaw}}<span class="wizard-bonus-flaw">{{this.flaw.name}}</span>{{/if}}
+    </div>
+  </div>
+{{/each}}

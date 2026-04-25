@@ -1,0 +1,42 @@
+<form class="vtm-custom sheet actor shop" autocomplete="off">
+
+  {{!-- Header --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+    <div class="header-fields">
+      <h1 class="charname">
+        <input name="name" type="text" value="{{actor.name}}" placeholder="Shop Name" />
+      </h1>
+    </div>
+    <div class="header-tags">
+      {{#if system.shopType}}<span class="header-tag tag-gen">{{system.shopType}}</span>{{/if}}
+    </div>
+  </header>
+
+  {{!-- Shop description --}}
+  {{#if isGM}}
+    <div class="shop-info-bar">
+      <input type="text" name="system.shopType" value="{{system.shopType}}" placeholder="Shop type (e.g. Black Market, Gun Dealer)" class="shop-type-input" />
+      <input type="text" name="system.description" value="{{system.description}}" placeholder="Shop description" class="shop-desc-input" />
+    </div>
+  {{else}}
+    {{#if system.description}}
+      <div class="shop-info-bar">
+        <span class="shop-description">{{system.description}}</span>
+      </div>
+    {{/if}}
+  {{/if}}
+
+  {{!-- Tabs --}}
+  <nav class="sheet-tabs" data-group="primary">
+    <a class="item" data-tab="weapons">Weapons</a>
+    <a class="item" data-tab="gear">Gear</a>
+    {{#if isGM}}<a class="item" data-tab="manage">Manage</a>{{/if}}
+  </nav>
+
+  <section class="sheet-body">
+    {{> "systems/vtm-custom/templates/actor/shop-partials/_tab-weapons.hbs"}}
+    {{> "systems/vtm-custom/templates/actor/shop-partials/_tab-gear.hbs"}}
+    {{> "systems/vtm-custom/templates/actor/shop-partials/_tab-manage.hbs"}}
+  </section>
+</form>

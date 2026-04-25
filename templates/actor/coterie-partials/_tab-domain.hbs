@@ -1,0 +1,88 @@
+<div class="tab" data-group="primary" data-tab="domain">
+  <div class="bio-grid">
+    <div class="bio-field">
+      <label>Concept</label>
+      <input type="text" name="system.concept" value="{{system.concept}}" class="bio-value" />
+    </div>
+    <div class="bio-field">
+      <label>Coterie Type</label>
+      <select name="system.coterieType" class="bio-value">
+        {{#each coterieTypes}}
+          <option value="{{this}}" {{#if (eq this ../system.coterieType)}}selected{{/if}}>{{#if this}}{{this}}{{else}}-- Select --{{/if}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-header"><h3>Domain</h3></div>
+
+  <div class="bio-grid" style="margin-bottom: 8px">
+    <div class="bio-field">
+      <label>Domain Name</label>
+      <input type="text" name="system.domain.name" value="{{system.domain.name}}" class="bio-value" />
+    </div>
+    <div class="bio-field">
+      <label>Description</label>
+      <input type="text" name="system.domain.description" value="{{system.domain.description}}" class="bio-value" />
+    </div>
+  </div>
+
+  <div class="coterie-tracker-row">
+    <div class="coterie-tracker">
+      <label>Chasse</label>
+      <span class="coterie-tracker-desc">Hunting ground quality</span>
+      <div class="dot-set" data-coterie-tracker="domain.chasse">
+        {{#each chasseDots}}
+          <span class="dot {{#if this}}filled{{/if}}" data-value="{{math @index 1}}"></span>
+        {{/each}}
+      </div>
+    </div>
+    <div class="coterie-tracker">
+      <label>Lien</label>
+      <span class="coterie-tracker-desc">Political connections</span>
+      <div class="dot-set" data-coterie-tracker="domain.lien">
+        {{#each lienDots}}
+          <span class="dot {{#if this}}filled{{/if}}" data-value="{{math @index 1}}"></span>
+        {{/each}}
+      </div>
+    </div>
+    <div class="coterie-tracker">
+      <label>Portillon</label>
+      <span class="coterie-tracker-desc">Access to other domains</span>
+      <div class="dot-set" data-coterie-tracker="domain.portillon">
+        {{#each portillonDots}}
+          <span class="dot {{#if this}}filled{{/if}}" data-value="{{math @index 1}}"></span>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-header"><h3>Haven</h3></div>
+
+  <div class="bio-grid" style="margin-bottom: 8px">
+    <div class="bio-field">
+      <label>Haven Name</label>
+      <input type="text" name="system.haven.name" value="{{system.haven.name}}" class="bio-value" />
+    </div>
+    <div class="bio-field">
+      <label>Description</label>
+      <input type="text" name="system.haven.description" value="{{system.haven.description}}" class="bio-value" />
+    </div>
+  </div>
+
+  <div class="coterie-tracker-row">
+    <div class="coterie-tracker">
+      <label>Haven Rating</label>
+      <span class="coterie-tracker-desc">Security and quality</span>
+      <div class="dot-set" data-coterie-tracker="haven.value">
+        {{#each havenDots}}
+          <span class="dot {{#if this}}filled{{/if}}" data-value="{{math @index 1}}"></span>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

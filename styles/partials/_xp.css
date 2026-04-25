@@ -1,0 +1,122 @@
+/* --- XP Tab --- */
+.vtm-custom .xp-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--vtm-border);
+}
+
+.vtm-custom .xp-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.vtm-custom .xp-stat label {
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--vtm-gold-dim);
+}
+
+.vtm-custom .xp-stat .xp-value {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.vtm-custom .xp-stat .xp-value.total {
+  color: var(--vtm-text-bright);
+}
+
+.vtm-custom .xp-stat .xp-value.spent {
+  color: var(--vtm-text-dim);
+}
+
+.vtm-custom .xp-stat .xp-value.remaining {
+  color: var(--vtm-gold);
+}
+
+.vtm-custom .xp-arrow {
+  color: var(--vtm-border);
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.vtm-custom .xp-actions {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.vtm-custom .xp-form {
+  padding: 10px 12px;
+  background: var(--vtm-bg-light);
+  border: 1px solid var(--vtm-border);
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+
+.vtm-custom .xp-form .form-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.vtm-custom .xp-form .form-row label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--vtm-gold-dim);
+  min-width: 70px;
+}
+
+.vtm-custom .xp-form .form-row input,
+.vtm-custom .xp-form .form-row select {
+  flex: 1;
+  padding: 5px 8px;
+  font-size: 11px;
+}
+
+.vtm-custom .xp-log-title {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--vtm-gold-dim);
+  margin-bottom: 6px;
+}
+
+.vtm-custom .xp-log {
+  font-size: 11px;
+  color: var(--vtm-text-dim);
+}
+
+.vtm-custom .xp-log .log-entry {
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(68, 68, 80, 0.3);
+  display: flex;
+  gap: 8px;
+}
+
+.vtm-custom .xp-log .log-amount.add {
+  color: #6ac47a;
+  font-weight: bold;
+  min-width: 60px;
+  font-size: 11px;
+}
+
+.vtm-custom .xp-log .log-amount.spend {
+  color: var(--vtm-accent-light);
+  font-weight: bold;
+  min-width: 60px;
+  font-size: 11px;
+}
+
+.vtm-custom .xp-log .log-reason {
+  flex: 1;
+  color: var(--vtm-text);
+  font-size: 11px;
+}

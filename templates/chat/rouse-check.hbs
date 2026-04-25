@@ -1,0 +1,12 @@
+<div class="vtm-roll vtm-rouse-check">
+  <div class="vtm-roll-label">{{label}}{{#if multiCheck}} (x{{count}}){{/if}}</div>
+  <div class="vtm-roll-dice">
+    {{#each results}}
+      <span class="vtm-die {{#if this.failed}}rouse-fail{{else}}rouse-pass{{/if}}">{{this.die}}</span>
+    {{/each}}
+  </div>
+  <div class="vtm-roll-result {{#if failed}}rouse-failed{{else}}rouse-passed{{/if}}">
+    {{outcomeText}}
+  </div>
+  {{#if hungerWarning}}<div class="vtm-roll-warning bestial">Hunger is at maximum! The Beast demands to feed!</div>{{/if}}
+</div>

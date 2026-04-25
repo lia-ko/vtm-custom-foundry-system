@@ -1,0 +1,30 @@
+<div class="wizard-container">
+  {{!-- Progress bar --}}
+  <div class="wizard-progress">
+    {{#each (dotArray step totalSteps)}}
+      <span class="wizard-step-dot {{#if this}}active{{/if}}"></span>
+    {{/each}}
+    <span class="wizard-step-label">Step {{step}} of {{totalSteps}}</span>
+  </div>
+
+  <div class="wizard-body">
+    {{#if (eq step 1)}}{{> "systems/vtm-custom/templates/apps/wizard-steps/_step-identity.hbs"}}{{/if}}
+    {{#if (eq step 2)}}{{> "systems/vtm-custom/templates/apps/wizard-steps/_step-attributes.hbs"}}{{/if}}
+    {{#if (eq step 3)}}{{> "systems/vtm-custom/templates/apps/wizard-steps/_step-skills.hbs"}}{{/if}}
+    {{#if (eq step 4)}}{{> "systems/vtm-custom/templates/apps/wizard-steps/_step-disciplines.hbs"}}{{/if}}
+    {{#if (eq step 5)}}{{> "systems/vtm-custom/templates/apps/wizard-steps/_step-predator.hbs"}}{{/if}}
+    {{#if (eq step 6)}}{{> "systems/vtm-custom/templates/apps/wizard-steps/_step-advantages.hbs"}}{{/if}}
+    {{#if (eq step 7)}}{{> "systems/vtm-custom/templates/apps/wizard-steps/_step-final.hbs"}}{{/if}}
+  </div>
+
+  {{!-- Navigation --}}
+  <div class="wizard-nav">
+    {{#if (gt step 1)}}<button type="button" class="btn wizard-back">&larr; Back</button>{{/if}}
+    <div style="flex:1"></div>
+    {{#if (eq step totalSteps)}}
+      <button type="button" class="btn btn-green wizard-finish">Create Character</button>
+    {{else}}
+      <button type="button" class="btn btn-red wizard-next">Next &rarr;</button>
+    {{/if}}
+  </div>
+</div>

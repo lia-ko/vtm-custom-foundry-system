@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Alleycat",
+    "description": "You stalk and ambush prey in dark alleys and isolated areas, using violence or intimidation.",
+    "skillBonus": { "key": "intimidation", "group": "talents", "dots": 1 },
+    "secondSkillBonus": { "key": "brawl", "group": "talents", "dots": 1 },
+    "disciplineOptions": ["Celerity", "Potence"],
+    "merit": { "name": "Criminal Contacts", "value": 3, "category": "Social", "description": "You know people in the criminal underworld who can fence goods, provide weapons, or look the other way." },
+    "flaw": { "name": "Prey Exclusion (children)", "value": 1, "category": "Mental", "description": "You refuse to feed on children. Doing so accidentally triggers a Humanity roll." },
+    "humanityMod": -1,
+    "specialty": "Intimidation (Stickups)"
+  },
+  {
+    "name": "Bagger",
+    "description": "You acquire blood bags from hospitals, blood banks, or the black market rather than hunting live prey.",
+    "skillBonus": { "key": "streetwise", "group": "talents", "dots": 1 },
+    "secondSkillBonus": { "key": "larceny", "group": "skills", "dots": 1 },
+    "disciplineOptions": ["Blood Sorcery", "Obfuscate"],
+    "merit": { "name": "Iron Gullet", "value": 3, "category": "Physical", "description": "You can feed on cold or rancid blood without penalty." },
+    "flaw": { "name": "Enemy (Supplier)", "value": 1, "category": "Social", "description": "Someone in your supply chain is unreliable or dangerous." },
+    "humanityMod": 0,
+    "specialty": "Streetwise (Black Market)"
+  },
+  {
+    "name": "Blood Leech",
+    "description": "You feed on other vampires — a dangerous and despised practice, but the blood is potent.",
+    "skillBonus": { "key": "brawl", "group": "talents", "dots": 1 },
+    "secondSkillBonus": { "key": "stealth", "group": "skills", "dots": 1 },
+    "disciplineOptions": ["Celerity", "Protean"],
+    "merit": null,
+    "flaw": { "name": "Shunned", "value": 2, "category": "Social", "description": "Kindred society knows or suspects what you do. They avoid you." },
+    "humanityMod": -1,
+    "specialty": "Brawl (Kindred)"
+  },
+  {
+    "name": "Cleaver",
+    "description": "You maintain a mortal family or close social group and feed from them, keeping your nature hidden.",
+    "skillBonus": { "key": "subterfuge", "group": "talents", "dots": 1 },
+    "secondSkillBonus": { "key": "expression", "group": "talents", "dots": 1 },
+    "disciplineOptions": ["Dominate", "Animalism"],
+    "merit": { "name": "Herd (Family)", "value": 2, "category": "Social", "description": "Your mortal family serves as a reliable feeding source." },
+    "flaw": { "name": "Dark Secret (Cleaver)", "value": 1, "category": "Social", "description": "Kindred society forbids maintaining mortal attachments. If discovered, you face punishment." },
+    "humanityMod": 0,
+    "specialty": "Subterfuge (Maintaining the Facade)"
+  },
+  {
+    "name": "Consensualist",
+    "description": "You only feed from willing vessels who know what you are and consent to being fed upon.",
+    "skillBonus": { "key": "empathy", "group": "talents", "dots": 1 },
+    "secondSkillBonus": { "key": "medicine", "group": "knowledges", "dots": 1 },
+    "disciplineOptions": ["Auspex", "Fortitude"],
+    "merit": { "name": "Farmer", "value": 2, "category": "Feeding", "description": "You feed exclusively from willing vessels. Reduces Stain risk." },
+    "flaw": { "name": "Prey Exclusion (unwilling)", "value": 1, "category": "Mental", "description": "You cannot feed without consent. Emergency feeding causes a Stain." },
+    "humanityMod": 1,
+    "specialty": "Medicine (Phlebotomy)"
+  },
+  {
+    "name": "Farmer",
+    "description": "You feed exclusively on animals, refusing human blood on ethical grounds.",
+    "skillBonus": { "key": "animalKen", "group": "skills", "dots": 1 },
+    "secondSkillBonus": { "key": "survival", "group": "skills", "dots": 1 },
+    "disciplineOptions": ["Animalism", "Protean"],
+    "merit": null,
+    "flaw": { "name": "Vegan", "value": 2, "category": "Feeding", "description": "You feed only on animals. Human blood tastes repulsive. Hunger can never drop below 1." },
+    "humanityMod": 1,
+    "specialty": "Animal Ken (Specific Animal)"
+  },
+  {
+    "name": "Osiris",
+    "description": "You lead a cult, fan club, or congregation and feed from your devoted followers.",
+    "skillBonus": { "key": "leadership", "group": "talents", "dots": 1 },
+    "secondSkillBonus": { "key": "performance", "group": "skills", "dots": 1 },
+    "disciplineOptions": ["Blood Sorcery", "Presence"],
+    "merit": { "name": "Herd (Cultists)", "value": 2, "category": "Social", "description": "Your cult or fan following provides reliable feeding." },
+    "flaw": { "name": "Fame (Cult Leader)", "value": 1, "category": "Social", "description": "Your public presence as a leader makes you conspicuous to the Second Inquisition." },
+    "humanityMod": 0,
+    "specialty": "Performance (Sermons)"
+  },
+  {
+    "name": "Sandman",
+    "description": "You feed on sleeping victims, slipping in and out without ever being noticed.",
+    "skillBonus": { "key": "stealth", "group": "skills", "dots": 1 },
+    "secondSkillBonus": { "key": "awareness", "group": "talents", "dots": 1 },
+    "disciplineOptions": ["Auspex", "Obfuscate"],
+    "merit": { "name": "Sandman", "value": 1, "category": "Feeding", "description": "+2 dice to Stealth when approaching sleeping victims." },
+    "flaw": null,
+    "humanityMod": 0,
+    "specialty": "Stealth (Break-in)"
+  },
+  {
+    "name": "Scene Queen",
+    "description": "You feed at events, parties, and gatherings — clubs, concerts, raves, galleries — where willing or inebriated vessels are plentiful.",
+    "skillBonus": { "key": "expression", "group": "talents", "dots": 1 },
+    "secondSkillBonus": { "key": "etiquette", "group": "skills", "dots": 1 },
+    "disciplineOptions": ["Dominate", "Presence"],
+    "merit": { "name": "Fame (Scene)", "value": 1, "category": "Social", "description": "You're known in the local nightlife scene." },
+    "flaw": { "name": "Influence (Dependent)", "value": 1, "category": "Social", "description": "Your feeding depends on maintaining your social status." },
+    "humanityMod": 0,
+    "specialty": "Etiquette (Nightlife)"
+  },
+  {
+    "name": "Siren",
+    "description": "You use seduction and charm to lure victims, feeding during intimate encounters.",
+    "skillBonus": { "key": "subterfuge", "group": "talents", "dots": 1 },
+    "secondSkillBonus": { "key": "expression", "group": "talents", "dots": 1 },
+    "disciplineOptions": ["Fortitude", "Presence"],
+    "merit": { "name": "Beautiful", "value": 2, "category": "Physical", "description": "+1 die to Social pools when appearance matters." },
+    "flaw": { "name": "Enemy (Spurned Lover)", "value": 1, "category": "Social", "description": "A former vessel became obsessed and now stalks or threatens you." },
+    "humanityMod": 0,
+    "specialty": "Subterfuge (Seduction)"
+  }
+]

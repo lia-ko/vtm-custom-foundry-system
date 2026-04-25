@@ -1,0 +1,170 @@
+import { safePrompt } from "../../helpers/safe-dialog.mjs";
+/** Discipline, ritual, and clan handlers. */
+
+import { DISCIPLINE_DB, getAvailableDisciplines, getAllPowers } from "../../data/disciplines.mjs";
+import { RITUAL_DB } from "../../data/rituals.mjs";
+import { getClan } from "../../data/clans.mjs";
+
+const DIALOG_PATH = "systems/vtm-custom/templates/dialogs";
+
+export function registerListeners(html, sheet) {
+  html.on("click", ".toggle-disc", sheet._onToggleDisc.bind(sheet));
+  html.on("click", ".disc-dots .dot", sheet._onDiscDotClick.bind(sheet));
+  html.on("click", ".add-discipline", sheet._onAddDiscipline.bind(sheet));
+  html.on("click", ".delete-discipline", sheet._onDeleteDiscipline.bind(sheet));
+  html.on("click", ".power-pin", sheet._onTogglePowerPin.bind(sheet));
+  html.on("click", ".add-ritual", sheet._onAddRitual.bind(sheet));
+  html.on("click", ".add-custom-ritual", sheet._onAddCustomRitual.bind(sheet));
+  html.on("click", ".delete-ritual", sheet._onDeleteItem.bind(sheet, "rituals"));
+  html.on("change", ".clan-select", sheet._onClanChange.bind(sheet));
+}
+
+export async function _onToggleDisc(event) {
+  if (event.target.closest(".disc-dots") || event.target.closest(".disc-delete")) return;
+  event.preventDefault();
+  const index = parseInt(event.currentTarget.dataset.index);
+  const discs = foundry.utils.deepClone(this.actor.system.disciplines);
+  discs[index].open = !discs[index].open;
+  await this.actor.update({ "system.disciplines": discs });
+}
+
+export async function _onDiscDotClick(event) {
+  event.preventDefault();
+  event.stopPropagation();
+  const discIndex = parseInt(event.currentTarget.dataset.discDot);
+  const clickedValue = parseInt(event.currentTarget.dataset.value);
+  const discs = foundry.utils.deepClone(this.actor.system.disciplines);
+  const disc = discs[discIndex];
+  const oldValue = disc.value;
+  disc.value = oldValue === clickedValue ? clickedValue - 1 : clickedValue;
+  disc.open = true;
+
+  if (disc.value > oldValue) {
+    const dbPowers = getAllPowers(disc.name);
+    for (let lv = oldValue + 1; lv <= disc.value; lv++) {
+      for (const p of dbPowers.filter(p => p.level === lv)) {
+        if (!disc.powers.find(ep => ep.name === p.name)) {
+          disc.powers.push({ ...p, amalgam: p.amalgam || "", pin: false });
+        }
+      }
+    }
+    disc.powers.sort((a, b) => a.level - b.level);
+  }
+
+  await this.actor.update({ "system.disciplines": discs });
+}
+
+export async function _onAddDiscipline(event) {
+  event.preventDefault();
+  const owned = this.actor.system.disciplines.map(d => d.name);
+  const available = getAvailableDisciplines().filter(d => !owned.includes(d.name));
+
+  if (available.length === 0) {
+    const name = await this._promptInput("Discipline Name (custom)");
+    if (!name) return;
+    const discs = foundry.utils.deepClone(this.actor.system.disciplines);
+    discs.push({ name, path: "", icon: "\u2666", value: 0, color: "", open: true, powers: [] });
+    await this.actor.update({ "system.disciplines": discs });
+    return;
+  }
+
+  const content = await renderTemplate(`${DIALOG_PATH}/add-from-list.hbs`, {
+    label: "Discipline",
+    options: available.map(d => ({ value: d.name, label: `${d.icon} ${d.name}` })),
+    showRating: false,
+  });
+
+  const result = await safePrompt({ title: "Add Discipline", content, callback: html => html.find('[name="selection"]').val() });
+  if (!result) return;
+
+  const dbEntry = DISCIPLINE_DB[result];
+  const discs = foundry.utils.deepClone(this.actor.system.disciplines);
+  discs.push({ name: result, path: "", icon: dbEntry?.icon || "\u2666", value: 0, color: dbEntry?.color || "", open: true, powers: [] });
+  await this.actor.update({ "system.disciplines": discs });
+}
+
+export async function _onDeleteDiscipline(event) {
+  event.preventDefault();
+  event.stopPropagation();
+  const index = parseInt(event.currentTarget.dataset.index);
+  const discs = foundry.utils.deepClone(this.actor.system.disciplines);
+  discs.splice(index, 1);
+  await this.actor.update({ "system.disciplines": discs });
+}
+
+export async function _onTogglePowerPin(event) {
+  event.preventDefault();
+  event.stopPropagation();
+  const discIdx = parseInt(event.currentTarget.dataset.disc);
+  const powerIdx = parseInt(event.currentTarget.dataset.power);
+  const discs = foundry.utils.deepClone(this.actor.system.disciplines);
+  discs[discIdx].powers[powerIdx].pin = !discs[discIdx].powers[powerIdx].pin;
+  await this.actor.update({ "system.disciplines": discs });
+}
+
+export async function _onAddRitual(event) {
+  event.preventDefault();
+  const owned = this.actor.system.rituals.map(r => r.name);
+  const available = RITUAL_DB.filter(r => !owned.includes(r.name));
+
+  if (available.length === 0) { ui.notifications.info("All rituals already learned."); return; }
+
+  const content = await renderTemplate(`${DIALOG_PATH}/add-from-list.hbs`, {
+    label: "Ritual",
+    options: available.map(r => ({ value: r.name, label: `Lvl ${r.level} — ${r.name}` })),
+    showRating: false,
+  });
+
+  const result = await safePrompt({ title: "Add Ritual", content, callback: html => html.find('[name="selection"]').val() });
+  if (!result) return;
+
+  const dbEntry = available.find(r => r.name === result);
+  if (!dbEntry) return;
+
+  const rituals = foundry.utils.deepClone(this.actor.system.rituals);
+  rituals.push({ ...dbEntry, custom: false });
+  rituals.sort((a, b) => a.level - b.level);
+  await this.actor.update({ "system.rituals": rituals });
+}
+
+export async function _onAddCustomRitual(event) {
+  event.preventDefault();
+  const content = await renderTemplate(`${DIALOG_PATH}/custom-ritual.hbs`);
+  const result = await safePrompt({
+    title: "Add Custom Ritual",
+    content,
+    callback: html => {
+      const name = html.find('[name="name"]').val()?.trim();
+      if (!name) return null;
+      return { name, level: parseInt(html.find('[name="level"]').val()), description: html.find('[name="desc"]').val() || "", cost: html.find('[name="cost"]').val() || "1 Rouse", pool: html.find('[name="pool"]').val() || "Int + Blood Sorcery", ingredients: html.find('[name="ingredients"]').val() || "", time: html.find('[name="time"]').val() || "", custom: true };
+    },
+  });
+  if (!result) return;
+
+  const rituals = foundry.utils.deepClone(this.actor.system.rituals);
+  rituals.push(result);
+  rituals.sort((a, b) => a.level - b.level);
+  await this.actor.update({ "system.rituals": rituals });
+}
+
+export async function _onClanChange(event) {
+  event.preventDefault();
+  const newClan = event.currentTarget.value;
+  const clanData = getClan(newClan);
+
+  if (!clanData || !clanData.disciplines.length) {
+    await this.actor.update({ "system.clan": newClan });
+    return;
+  }
+
+  const discs = foundry.utils.deepClone(this.actor.system.disciplines);
+  const ownedNames = discs.map(d => d.name);
+
+  for (const discName of clanData.disciplines) {
+    if (ownedNames.includes(discName)) continue;
+    const dbEntry = DISCIPLINE_DB[discName];
+    discs.push({ name: discName, path: "", icon: dbEntry?.icon || "\u2666", value: 0, color: dbEntry?.color || "", open: true, powers: [] });
+  }
+
+  await this.actor.update({ "system.clan": newClan, "system.disciplines": discs });
+}

@@ -1,0 +1,63 @@
+{
+  "types": {
+    "sanguine": {
+      "name": "Sanguine",
+      "emotion": "Joyful, lustful, playful, excited",
+      "color": "#c45a7a",
+      "disciplines": ["Blood Sorcery", "Presence"],
+      "description": "The blood of the passionate and pleasure-seeking. Those in the throes of desire, excitement, or hedonistic joy. Found among lovers, partygoers, thrill-seekers, and the newly infatuated."
+    },
+    "choleric": {
+      "name": "Choleric",
+      "emotion": "Angry, violent, passionate, driven",
+      "color": "#c45a5a",
+      "disciplines": ["Celerity", "Potence"],
+      "description": "The blood of the furious and driven. Those consumed by anger, ambition, or competitive fire. Found among fighters, athletes, road-ragers, domestic abusers, and anyone in the grip of rage."
+    },
+    "melancholic": {
+      "name": "Melancholic",
+      "emotion": "Sad, grieving, intellectual, contemplative",
+      "color": "#5a7ac4",
+      "disciplines": ["Fortitude", "Obfuscate"],
+      "description": "The blood of the sorrowful and thoughtful. Those deep in grief, depression, intellectual absorption, or artistic melancholy. Found among mourners, scholars, artists in crisis, and the clinically depressed."
+    },
+    "phlegmatic": {
+      "name": "Phlegmatic",
+      "emotion": "Calm, apathetic, lazy, controlled",
+      "color": "#5ac47a",
+      "disciplines": ["Auspex", "Dominate"],
+      "description": "The blood of the detached and controlled. Those who are serene, indifferent, or emotionally suppressed. Found among meditators, bureaucrats, the heavily medicated, and those in shock."
+    },
+    "animal": {
+      "name": "Animal",
+      "emotion": "Instinctual, primal",
+      "color": "#8a7a5a",
+      "disciplines": ["Animalism", "Protean"],
+      "description": "Animal blood. Provides limited nourishment. Cannot reduce Hunger below 1. At Blood Potency 2+, slakes 1 less Hunger. At Blood Potency 4+, provides no nourishment at all."
+    },
+    "empty": {
+      "name": "Empty / Thin",
+      "emotion": "None — emotionally flat",
+      "color": "#6a6a6a",
+      "disciplines": [],
+      "description": "Blood with no discernible resonance. The vessel was emotionally numb, heavily drugged, or otherwise flat. Provides nourishment but no resonance bonus."
+    }
+  },
+  "intensities": {
+    "fleeting": {
+      "name": "Fleeting",
+      "description": "A temporary emotional state. Grants a single bonus die to one roll using an associated Discipline this session.",
+      "bonus": 1
+    },
+    "intense": {
+      "name": "Intense",
+      "description": "A deep, sustained emotional state. Grants a bonus die to all rolls using associated Disciplines for the session. Required for learning in-clan Disciplines at reduced XP cost.",
+      "bonus": 1
+    },
+    "acute": {
+      "name": "Acute (Dyscrasia)",
+      "description": "An extreme, overwhelming emotional state — rare and valuable. Grants 2 bonus dice to associated Discipline rolls. The blood itself is intoxicating and may trigger a Hunger Frenzy check to stop feeding.",
+      "bonus": 2
+    }
+  }
+}

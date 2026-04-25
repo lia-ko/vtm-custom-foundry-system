@@ -1,0 +1,20 @@
+<h2>Identity</h2>
+<div class="form-group"><label>Character Name</label><input type="text" name="name" value="{{data.name}}" autofocus /></div>
+<div class="form-group">
+  <label>Clan</label>
+  <select name="clan">
+    <option value="">-- Select Clan --</option>
+    {{#each clans}}
+      <option value="{{this.name}}" {{#if (eq this.name ../data.clan)}}selected{{/if}}>{{this.name}} — {{this.nickname}}</option>
+    {{/each}}
+  </select>
+</div>
+{{#if clanInfo}}
+  <div class="wizard-info-box">
+    <strong>{{clanInfo.name}}</strong> — {{clanInfo.nickname}}<br>
+    <span style="font-size:9px;color:#8a8880">In-clan: {{#each clanInfo.disciplines}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</span>
+  </div>
+{{/if}}
+<div class="form-group"><label>Generation</label><input type="text" name="generation" value="{{data.generation}}" /></div>
+<div class="form-group"><label>Sire</label><input type="text" name="sire" value="{{data.sire}}" /></div>
+<div class="form-group"><label>Concept</label><input type="text" name="concept" value="{{data.concept}}" /></div>

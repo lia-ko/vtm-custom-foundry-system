@@ -1,0 +1,35 @@
+/* --- Tabs --- */
+.vtm-custom .sheet-tabs {
+  display: flex;
+  background: var(--vtm-bg);
+  border-bottom: 2px solid var(--vtm-border);
+}
+
+.vtm-custom .sheet-tabs .item {
+  padding: 6px 11px;
+  color: var(--vtm-text-dim);
+  text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 1px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  font-family: inherit;
+}
+
+.vtm-custom .sheet-tabs .item:hover {
+  color: var(--vtm-text);
+}
+
+.vtm-custom .sheet-tabs .item.active {
+  color: var(--vtm-accent-light);
+  border-bottom-color: var(--vtm-accent);
+}
+
+/* --- Tab Body --- */
+.vtm-custom .sheet-body {
+  padding: 11px 14px;
+  overflow-y: auto;
+}

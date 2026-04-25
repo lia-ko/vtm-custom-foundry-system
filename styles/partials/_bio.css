@@ -1,0 +1,99 @@
+/* --- Bio Tab --- */
+.vtm-custom .bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.vtm-custom .bio-field {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.vtm-custom .bio-field label {
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--vtm-gold-dim);
+}
+
+.vtm-custom .bio-field .bio-value {
+  font-size: 11px;
+  color: var(--vtm-text);
+  background: var(--vtm-bg-lighter);
+  padding: 3px 7px;
+  border: 1px solid var(--vtm-border);
+  border-radius: 2px;
+}
+
+.vtm-custom .bio-text {
+  background: var(--vtm-bg-light);
+  border: 1px solid var(--vtm-border);
+  border-radius: 4px;
+  padding: 9px 11px;
+  font-size: 11px;
+  color: var(--vtm-text);
+  line-height: 1.6;
+}
+
+.vtm-custom .bio-text .editor {
+  min-height: 100px;
+}
+
+/* --- Clan Traits (Bane, Compulsion, In-Clan Disciplines) --- */
+.vtm-custom .clan-traits {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.vtm-custom .clan-trait {
+  background: var(--vtm-bg-light);
+  border: 1px solid var(--vtm-border);
+  border-radius: 4px;
+  padding: 7px 10px;
+}
+
+.vtm-custom .clan-trait-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 3px;
+}
+
+.vtm-custom .clan-trait-icon {
+  font-size: 11px;
+  color: var(--vtm-accent-light);
+}
+
+.vtm-custom .clan-trait-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--vtm-gold-dim);
+  font-weight: bold;
+}
+
+.vtm-custom .clan-trait-text {
+  font-size: 10px;
+  color: var(--vtm-text);
+  line-height: 1.5;
+}
+
+.vtm-custom .clan-disc-list {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.vtm-custom .clan-disc-tag {
+  font-size: 9px;
+  color: var(--vtm-accent-light);
+  background: rgba(139, 26, 26, 0.12);
+  border: 1px solid rgba(179, 48, 48, 0.3);
+  padding: 2px 8px;
+  border-radius: 10px;
+}

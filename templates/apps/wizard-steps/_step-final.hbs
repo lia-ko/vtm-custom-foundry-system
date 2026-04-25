@@ -1,0 +1,22 @@
+<h2>Final Details</h2>
+
+<div class="form-group"><label>Humanity</label><input type="number" name="humanity" value="{{data.humanity}}" min="1" max="10" />
+  <span class="wizard-hint-inline">Default 7 (modified by predator type)</span>
+</div>
+<div class="form-group"><label>Willpower (max)</label><input type="number" name="willpower" value="{{data.willpower.max}}" min="1" max="10" />
+  <span class="wizard-hint-inline">V5: typically Composure + Resolve equivalent</span>
+</div>
+<div class="form-group"><label>Blood Potency</label><input type="number" name="bloodPotency" value="{{data.bloodPotency}}" min="0" max="2" />
+  <span class="wizard-hint-inline">Neonates start at 1, Thin-Bloods at 0</span>
+</div>
+
+<hr class="divider">
+<h3>Summary</h3>
+<div class="wizard-summary">
+  <div><strong>{{data.name}}</strong> — {{data.clan}} ({{data.generation}})</div>
+  <div>Concept: {{data.concept}}</div>
+  <div>Predator Type: {{data.predatorType}}</div>
+  <div>Disciplines: {{#each data.disciplines}}{{this.name}} ({{this.value}}){{#unless @last}}, {{/unless}}{{/each}}</div>
+  <div>Merits: {{#each data.merits}}{{this.name}} ({{this.value}}){{#unless @last}}, {{/unless}}{{/each}}{{#unless data.merits.length}}None{{/unless}}</div>
+  <div>Flaws: {{#each data.flaws}}{{this.name}} ({{this.value}}){{#unless @last}}, {{/unless}}{{/each}}{{#unless data.flaws.length}}None{{/unless}}</div>
+</div>

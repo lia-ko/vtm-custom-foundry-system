@@ -1,0 +1,16 @@
+<form>
+  <div class="form-group">
+    <label>Buying: <strong>{{itemName}}</strong> — ${{price}}</label>
+  </div>
+  {{#if description}}
+    <div class="form-group"><p style="font-size:11px;color:#8a8880">{{description}}</p></div>
+  {{/if}}
+  <div class="form-group">
+    <label>Purchase for</label>
+    <select name="character">
+      {{#each characters}}
+        <option value="{{this.id}}">{{this.name}} (${{this.cash}})</option>
+      {{/each}}
+    </select>
+  </div>
+</form>
